@@ -1,0 +1,35 @@
+{
+  "environments": {
+    "source": {
+      "server": "10.134.77.68,1433",
+      "database": "BookStore-Master-Source",
+      "username": "testuser",
+      "password": "TestDb@26#!",
+      "driver": "ODBC Driver 18 for SQL Server",
+      "encrypt": true,
+      "trust_certificate": true,
+      "description": "Source Database (Pre-Migration)"
+    },
+    "target": {
+      "server": "10.134.77.68,1433",
+      "database": "BookStore-Master",
+      "username": "testuser",
+      "password": "TestDb@26#!",
+      "driver": "ODBC Driver 18 for SQL Server",
+      "encrypt": true,
+      "trust_certificate": true,
+      "description": "Target Database (Post-Migration)"
+    },
+    "local": {
+      "server": "(localdb)\\MSSQLLocalDB",
+      "database": "BookServiceContext",
+      "username": null,
+      "password": null,
+      "driver": "ODBC Driver 17 for SQL Server",
+      "encrypt": false,
+      "trust_certificate": false,
+      "trusted_connection": true,
+      "description": "Local Development Database (Windows Auth)"
+    }
+  }
+}
