@@ -1,0 +1,370 @@
+{
+  "metadata": {
+    "snapshot_date": "2026-01-11T14:31:06.387266",
+    "database": "petclinic",
+    "host": "10.130.73.5",
+    "environment": "source"
+  },
+  "tables": {
+    "types": {
+      "columns": [
+        "id",
+        "name"
+      ],
+      "row_count": 6,
+      "data": [
+        {
+          "id": 1,
+          "name": "cat"
+        },
+        {
+          "id": 2,
+          "name": "dog"
+        },
+        {
+          "id": 3,
+          "name": "lizard"
+        },
+        {
+          "id": 4,
+          "name": "snake"
+        },
+        {
+          "id": 5,
+          "name": "bird"
+        },
+        {
+          "id": 6,
+          "name": "hamster"
+        }
+      ]
+    },
+    "specialties": {
+      "columns": [
+        "id",
+        "name"
+      ],
+      "row_count": 3,
+      "data": [
+        {
+          "id": 1,
+          "name": "radiology"
+        },
+        {
+          "id": 2,
+          "name": "surgery"
+        },
+        {
+          "id": 3,
+          "name": "dentistry"
+        }
+      ]
+    },
+    "owners": {
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "address",
+        "city",
+        "telephone"
+      ],
+      "row_count": 10,
+      "data": [
+        {
+          "id": 1,
+          "first_name": "George",
+          "last_name": "Franklin",
+          "address": "110 W. Liberty St.",
+          "city": "Madison",
+          "telephone": "6085551023"
+        },
+        {
+          "id": 2,
+          "first_name": "Betty",
+          "last_name": "Davis",
+          "address": "638 Cardinal Ave.",
+          "city": "Sun Prairie",
+          "telephone": "6085551749"
+        },
+        {
+          "id": 3,
+          "first_name": "Eduardo",
+          "last_name": "Rodriquez",
+          "address": "2693 Commerce St.",
+          "city": "McFarland",
+          "telephone": "6085558763"
+        },
+        {
+          "id": 4,
+          "first_name": "Harold",
+          "last_name": "Davis",
+          "address": "563 Friendly St.",
+          "city": "Windsor",
+          "telephone": "6085553198"
+        },
+        {
+          "id": 5,
+          "first_name": "Peter",
+          "last_name": "McTavish",
+          "address": "2387 S. Fair Way",
+          "city": "Madison",
+          "telephone": "6085552765"
+        },
+        {
+          "id": 6,
+          "first_name": "Jean",
+          "last_name": "Coleman",
+          "address": "105 N. Lake St.",
+          "city": "Monona",
+          "telephone": "6085552654"
+        },
+        {
+          "id": 7,
+          "first_name": "Jeff",
+          "last_name": "Black",
+          "address": "1450 Oak Blvd.",
+          "city": "Monona",
+          "telephone": "6085555387"
+        },
+        {
+          "id": 8,
+          "first_name": "Maria",
+          "last_name": "Escobito",
+          "address": "345 Maple St.",
+          "city": "Madison",
+          "telephone": "6085557683"
+        },
+        {
+          "id": 9,
+          "first_name": "David",
+          "last_name": "Schroeder",
+          "address": "2749 Blackhawk Trail",
+          "city": "Madison",
+          "telephone": "6085559435"
+        },
+        {
+          "id": 10,
+          "first_name": "Carlos",
+          "last_name": "Estaban",
+          "address": "2335 Independence La.",
+          "city": "Waunakee",
+          "telephone": "6085555487"
+        }
+      ]
+    },
+    "vets": {
+      "columns": [
+        "id",
+        "first_name",
+        "last_name"
+      ],
+      "row_count": 6,
+      "data": [
+        {
+          "id": 1,
+          "first_name": "James",
+          "last_name": "Carter"
+        },
+        {
+          "id": 2,
+          "first_name": "Helen",
+          "last_name": "Leary"
+        },
+        {
+          "id": 3,
+          "first_name": "Linda",
+          "last_name": "Douglas"
+        },
+        {
+          "id": 4,
+          "first_name": "Rafael",
+          "last_name": "Ortega"
+        },
+        {
+          "id": 5,
+          "first_name": "Henry",
+          "last_name": "Stevens"
+        },
+        {
+          "id": 6,
+          "first_name": "Sharon",
+          "last_name": "Jenkins"
+        }
+      ]
+    },
+    "vet_specialties": {
+      "columns": [
+        "vet_id",
+        "specialty_id"
+      ],
+      "row_count": 5,
+      "data": [
+        {
+          "vet_id": 2,
+          "specialty_id": 1
+        },
+        {
+          "vet_id": 3,
+          "specialty_id": 2
+        },
+        {
+          "vet_id": 3,
+          "specialty_id": 3
+        },
+        {
+          "vet_id": 4,
+          "specialty_id": 2
+        },
+        {
+          "vet_id": 5,
+          "specialty_id": 1
+        }
+      ]
+    },
+    "pets": {
+      "columns": [
+        "id",
+        "name",
+        "birth_date",
+        "type_id",
+        "owner_id"
+      ],
+      "row_count": 13,
+      "data": [
+        {
+          "id": 1,
+          "name": "Leo",
+          "birth_date": "2000-09-07",
+          "type_id": 1,
+          "owner_id": 1
+        },
+        {
+          "id": 2,
+          "name": "Basil",
+          "birth_date": "2002-08-06",
+          "type_id": 6,
+          "owner_id": 2
+        },
+        {
+          "id": 3,
+          "name": "Rosy",
+          "birth_date": "2001-04-17",
+          "type_id": 2,
+          "owner_id": 3
+        },
+        {
+          "id": 4,
+          "name": "Jewel",
+          "birth_date": "2000-03-07",
+          "type_id": 2,
+          "owner_id": 3
+        },
+        {
+          "id": 5,
+          "name": "Iggy",
+          "birth_date": "2000-11-30",
+          "type_id": 3,
+          "owner_id": 4
+        },
+        {
+          "id": 6,
+          "name": "George",
+          "birth_date": "2000-01-20",
+          "type_id": 4,
+          "owner_id": 5
+        },
+        {
+          "id": 7,
+          "name": "Samantha",
+          "birth_date": "1995-09-04",
+          "type_id": 1,
+          "owner_id": 6
+        },
+        {
+          "id": 8,
+          "name": "Max",
+          "birth_date": "1995-09-04",
+          "type_id": 1,
+          "owner_id": 6
+        },
+        {
+          "id": 9,
+          "name": "Lucky",
+          "birth_date": "1999-08-06",
+          "type_id": 5,
+          "owner_id": 7
+        },
+        {
+          "id": 10,
+          "name": "Mulligan",
+          "birth_date": "1997-02-24",
+          "type_id": 2,
+          "owner_id": 8
+        },
+        {
+          "id": 11,
+          "name": "Freddy",
+          "birth_date": "2000-03-09",
+          "type_id": 5,
+          "owner_id": 9
+        },
+        {
+          "id": 12,
+          "name": "Lucky",
+          "birth_date": "2000-06-24",
+          "type_id": 2,
+          "owner_id": 10
+        },
+        {
+          "id": 13,
+          "name": "Sly",
+          "birth_date": "2002-06-08",
+          "type_id": 1,
+          "owner_id": 10
+        }
+      ]
+    },
+    "visits": {
+      "columns": [
+        "id",
+        "pet_id",
+        "visit_date",
+        "description"
+      ],
+      "row_count": 5,
+      "data": [
+        {
+          "id": 1,
+          "pet_id": 7,
+          "visit_date": "2010-03-04",
+          "description": "rabies shot"
+        },
+        {
+          "id": 2,
+          "pet_id": 8,
+          "visit_date": "2011-03-04",
+          "description": "rabies shot"
+        },
+        {
+          "id": 3,
+          "pet_id": 8,
+          "visit_date": "2009-06-04",
+          "description": "neutered"
+        },
+        {
+          "id": 4,
+          "pet_id": 7,
+          "visit_date": "2008-09-04",
+          "description": "spayed"
+        },
+        {
+          "id": 5,
+          "pet_id": 8,
+          "visit_date": "2026-01-11",
+          "description": "Annual wellness examination"
+        }
+      ]
+    }
+  }
+}

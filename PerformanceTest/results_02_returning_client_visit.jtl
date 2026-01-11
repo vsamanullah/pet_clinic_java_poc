@@ -1,0 +1,61 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1768138131362,61,Step 1: Navigate to Find Owners,200,OK,Returning Client Visit Users 1-1,text,true,,6392,146,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,60,0,39
+1768138133977,39,Step 2: Search Owner by Last Name,200,OK,Returning Client Visit Users 1-1,text,true,,9763,430,1,1,http://10.134.77.66:8080/petclinic/owners/6,20,0,0
+1768138133977,20,Step 2: Search Owner by Last Name-0,302,Found,Returning Client Visit Users 1-1,,true,,229,225,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Coleman,20,0,0
+1768138133998,18,Step 2: Search Owner by Last Name-1,200,OK,Returning Client Visit Users 1-1,text,true,,9534,205,1,1,http://10.134.77.66:8080/petclinic/owners/6,18,0,0
+1768138138812,17,Step 3: View Owner Detail with Pet History,200,OK,Returning Client Visit Users 1-1,text,true,,9534,210,1,1,http://10.134.77.66:8080/petclinic/owners/6.html,17,0,0
+1768138147799,33,Step 4: Open Add Visit Form,200,OK,Returning Client Visit Users 1-1,text,true,,7947,223,1,1,http://10.134.77.66:8080/petclinic/owners/6/pets/8/visits/new,33,0,0
+1768138147833,51,Step 5: Submit Create Visit,200,OK,Returning Client Visit Users 1-1,text,true,,9976,572,1,1,http://10.134.77.66:8080/petclinic/owners/6,31,0,0
+1768138147833,31,Step 5: Submit Create Visit-0,302,Found,Returning Client Visit Users 1-1,,true,,229,367,1,1,http://10.134.77.66:8080/petclinic/owners/6/pets/8/visits/new,31,0,0
+1768138147865,19,Step 5: Submit Create Visit-1,200,OK,Returning Client Visit Users 1-1,text,true,,9747,205,1,1,http://10.134.77.66:8080/petclinic/owners/6,19,0,0
+1768138149432,6,Step 1: Navigate to Find Owners,200,OK,Returning Client Visit Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,6,0,0
+1768138152205,38,Step 2: Search Owner by Last Name,200,OK,Returning Client Visit Users 1-1,text,true,,9001,431,1,1,http://10.134.77.66:8080/petclinic/owners/10,20,0,0
+1768138152205,20,Step 2: Search Owner by Last Name-0,302,Found,Returning Client Visit Users 1-1,,true,,230,225,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Estaban,20,0,0
+1768138152226,17,Step 2: Search Owner by Last Name-1,200,OK,Returning Client Visit Users 1-1,text,true,,8771,206,1,1,http://10.134.77.66:8080/petclinic/owners/10,17,0,0
+1768138157048,24,Step 3: View Owner Detail with Pet History,200,OK,Returning Client Visit Users 1-1,text,true,,8771,211,1,1,http://10.134.77.66:8080/petclinic/owners/10.html,24,0,0
+1768138166129,34,Step 4: Open Add Visit Form,200,OK,Returning Client Visit Users 1-1,text,true,,7639,225,1,1,http://10.134.77.66:8080/petclinic/owners/10/pets/12/visits/new,34,0,0
+1768138166164,42,Step 5: Submit Create Visit,200,OK,Returning Client Visit Users 1-1,text,true,,9207,568,1,1,http://10.134.77.66:8080/petclinic/owners/10,23,0,0
+1768138166164,23,Step 5: Submit Create Visit-0,302,Found,Returning Client Visit Users 1-1,,true,,230,362,1,1,http://10.134.77.66:8080/petclinic/owners/10/pets/12/visits/new,23,0,0
+1768138166187,19,Step 5: Submit Create Visit-1,200,OK,Returning Client Visit Users 1-1,text,true,,8977,206,1,1,http://10.134.77.66:8080/petclinic/owners/10,19,0,0
+1768138167907,5,Step 1: Navigate to Find Owners,200,OK,Returning Client Visit Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,5,0,0
+1768138170906,32,Step 2: Search Owner by Last Name,200,OK,Returning Client Visit Users 1-1,text,true,,8991,432,1,1,http://10.134.77.66:8080/petclinic/owners/3,16,0,0
+1768138170906,16,Step 2: Search Owner by Last Name-0,302,Found,Returning Client Visit Users 1-1,,true,,229,227,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Rodriquez,16,0,0
+1768138170923,15,Step 2: Search Owner by Last Name-1,200,OK,Returning Client Visit Users 1-1,text,true,,8762,205,1,1,http://10.134.77.66:8080/petclinic/owners/3,15,0,0
+1768138175463,15,Step 3: View Owner Detail with Pet History,200,OK,Returning Client Visit Users 1-1,text,true,,8762,210,1,1,http://10.134.77.66:8080/petclinic/owners/3.html,15,0,0
+1768138183912,32,Step 4: Open Add Visit Form,200,OK,Returning Client Visit Users 1-1,text,true,,7639,223,1,1,http://10.134.77.66:8080/petclinic/owners/3/pets/4/visits/new,32,0,0
+1768138183946,35,Step 5: Submit Create Visit,200,OK,Returning Client Visit Users 1-1,text,true,,9195,563,1,1,http://10.134.77.66:8080/petclinic/owners/3,19,0,0
+1768138183946,19,Step 5: Submit Create Visit-0,302,Found,Returning Client Visit Users 1-1,,true,,229,358,1,1,http://10.134.77.66:8080/petclinic/owners/3/pets/4/visits/new,19,0,0
+1768138183965,16,Step 5: Submit Create Visit-1,200,OK,Returning Client Visit Users 1-1,text,true,,8966,205,1,1,http://10.134.77.66:8080/petclinic/owners/3,16,0,0
+1768138185968,6,Step 1: Navigate to Find Owners,200,OK,Returning Client Visit Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,6,0,0
+1768138188671,416,Step 2: Search Owner by Last Name,200,OK,Returning Client Visit Users 1-1,text,true,,6736,226,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Anderson,416,0,0
+1768140636796,57,Step 1: Navigate to Find Owners,200,OK,Returning Client Visit Users 1-1,text,true,,6392,146,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,56,0,38
+1768140639771,38,Step 2: Search Owner by Last Name,200,OK,Returning Client Visit Users 1-1,text,true,,9763,430,1,1,http://10.134.77.66:8080/petclinic/owners/6,19,0,0
+1768140639771,19,Step 2: Search Owner by Last Name-0,302,Found,Returning Client Visit Users 1-1,,true,,229,225,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Coleman,19,0,0
+1768140639792,17,Step 2: Search Owner by Last Name-1,200,OK,Returning Client Visit Users 1-1,text,true,,9534,205,1,1,http://10.134.77.66:8080/petclinic/owners/6,17,0,0
+1768140644720,33,Step 3: View Owner Detail with Pet History,200,OK,Returning Client Visit Users 1-1,text,true,,9534,210,1,1,http://10.134.77.66:8080/petclinic/owners/6.html,33,0,0
+1768140653032,33,Step 4: Open Add Visit Form,200,OK,Returning Client Visit Users 1-1,text,true,,7947,223,1,1,http://10.134.77.66:8080/petclinic/owners/6/pets/8/visits/new,33,0,0
+1768140653066,45,Step 5: Submit Create Visit,200,OK,Returning Client Visit Users 1-1,text,true,,9976,572,1,1,http://10.134.77.66:8080/petclinic/owners/6,27,0,0
+1768140653066,27,Step 5: Submit Create Visit-0,302,Found,Returning Client Visit Users 1-1,,true,,229,367,1,1,http://10.134.77.66:8080/petclinic/owners/6/pets/8/visits/new,27,0,0
+1768140653094,17,Step 5: Submit Create Visit-1,200,OK,Returning Client Visit Users 1-1,text,true,,9747,205,1,1,http://10.134.77.66:8080/petclinic/owners/6,17,0,0
+1768140654868,7,Step 1: Navigate to Find Owners,200,OK,Returning Client Visit Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,7,0,0
+1768140657584,34,Step 2: Search Owner by Last Name,200,OK,Returning Client Visit Users 1-1,text,true,,9001,431,1,1,http://10.134.77.66:8080/petclinic/owners/10,16,0,0
+1768140657584,16,Step 2: Search Owner by Last Name-0,302,Found,Returning Client Visit Users 1-1,,true,,230,225,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Estaban,16,0,0
+1768140657600,18,Step 2: Search Owner by Last Name-1,200,OK,Returning Client Visit Users 1-1,text,true,,8771,206,1,1,http://10.134.77.66:8080/petclinic/owners/10,18,0,0
+1768140662233,21,Step 3: View Owner Detail with Pet History,200,OK,Returning Client Visit Users 1-1,text,true,,8771,211,1,1,http://10.134.77.66:8080/petclinic/owners/10.html,21,0,0
+1768140671734,34,Step 4: Open Add Visit Form,200,OK,Returning Client Visit Users 1-1,text,true,,7639,225,1,1,http://10.134.77.66:8080/petclinic/owners/10/pets/12/visits/new,33,0,0
+1768140671769,39,Step 5: Submit Create Visit,200,OK,Returning Client Visit Users 1-1,text,true,,9207,568,1,1,http://10.134.77.66:8080/petclinic/owners/10,22,0,0
+1768140671769,22,Step 5: Submit Create Visit-0,302,Found,Returning Client Visit Users 1-1,,true,,230,362,1,1,http://10.134.77.66:8080/petclinic/owners/10/pets/12/visits/new,22,0,0
+1768140671791,17,Step 5: Submit Create Visit-1,200,OK,Returning Client Visit Users 1-1,text,true,,8977,206,1,1,http://10.134.77.66:8080/petclinic/owners/10,16,0,0
+1768140673388,5,Step 1: Navigate to Find Owners,200,OK,Returning Client Visit Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,5,0,0
+1768140676052,32,Step 2: Search Owner by Last Name,200,OK,Returning Client Visit Users 1-1,text,true,,8991,432,1,1,http://10.134.77.66:8080/petclinic/owners/3,16,0,0
+1768140676052,16,Step 2: Search Owner by Last Name-0,302,Found,Returning Client Visit Users 1-1,,true,,229,227,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Rodriquez,16,0,0
+1768140676068,16,Step 2: Search Owner by Last Name-1,200,OK,Returning Client Visit Users 1-1,text,true,,8762,205,1,1,http://10.134.77.66:8080/petclinic/owners/3,16,0,0
+1768140680147,17,Step 3: View Owner Detail with Pet History,200,OK,Returning Client Visit Users 1-1,text,true,,8762,210,1,1,http://10.134.77.66:8080/petclinic/owners/3.html,17,0,0
+1768140690044,20,Step 4: Open Add Visit Form,200,OK,Returning Client Visit Users 1-1,text,true,,7639,223,1,1,http://10.134.77.66:8080/petclinic/owners/3/pets/4/visits/new,20,0,0
+1768140690067,37,Step 5: Submit Create Visit,200,OK,Returning Client Visit Users 1-1,text,true,,9195,563,1,1,http://10.134.77.66:8080/petclinic/owners/3,19,0,0
+1768140690067,19,Step 5: Submit Create Visit-0,302,Found,Returning Client Visit Users 1-1,,true,,229,358,1,1,http://10.134.77.66:8080/petclinic/owners/3/pets/4/visits/new,19,0,0
+1768140690086,18,Step 5: Submit Create Visit-1,200,OK,Returning Client Visit Users 1-1,text,true,,8966,205,1,1,http://10.134.77.66:8080/petclinic/owners/3,18,0,0
+1768140691910,5,Step 1: Navigate to Find Owners,200,OK,Returning Client Visit Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,5,0,0
+1768140694781,28,Step 2: Search Owner by Last Name,200,OK,Returning Client Visit Users 1-1,text,true,,7444,428,1,1,http://10.134.77.66:8080/petclinic/owners/7,13,0,0
+1768140694781,13,Step 2: Search Owner by Last Name-0,302,Found,Returning Client Visit Users 1-1,,true,,229,223,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Black,13,0,0
+1768140694795,14,Step 2: Search Owner by Last Name-1,200,OK,Returning Client Visit Users 1-1,text,true,,7215,205,1,1,http://10.134.77.66:8080/petclinic/owners/7,14,0,0

@@ -1,0 +1,34 @@
+{
+  "environments": {
+    "source": {
+      "db_type": "postgresql",
+      "host": "10.130.73.5",
+      "port": 5432,
+      "database": "petclinic",
+      "username": "petclinic",
+      "password": "petclinic",
+      "instance_name": "prj-unicr-dev-svc-mig-demo:us-central1:pg-9",
+      "description": "Source Database - PetClinic PostgreSQL (GCP Cloud SQL)"
+    },
+    "target": {
+      "db_type": "postgresql",
+      "host": "10.130.73.5",
+      "port": 5432,
+      "database": "petclinic",
+      "username": "petclinic",
+      "password": "petclinic",
+      "instance_name": "prj-unicr-dev-svc-mig-demo:us-central1:pg-9",
+      "description": "Target Database - PetClinic PostgreSQL (GCP Cloud SQL)"
+    },
+    "local": {
+      "db_type": "postgresql",
+      "host": "localhost",
+      "port": 5432,
+      "database": "petclinic",
+      "username": "petclinic",
+      "password": "petclinic",
+      "instance_name": "prj-unicr-dev-svc-mig-demo:us-central1:pg-9",
+      "description": "Local Development Database - PetClinic PostgreSQL (GCP Cloud SQL)"
+    }
+  }
+}

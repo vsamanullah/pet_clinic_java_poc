@@ -1,0 +1,183 @@
+{
+  "environments": {
+    "source": {
+      "base_url": "http://10.134.77.66:8080/petclinic",
+      "protocol": "http",
+      "host": "10.134.77.66",
+      "port": 8080,
+      "context_path": "/petclinic",
+      "verify_ssl": false,
+      "timeout": 30,
+      "headers": {
+        "Accept": "text/html,application/json",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "description": "PetClinic Application - Target Environment"
+    },
+    "target": {
+      "base_url": "http://10.134.77.66:8080/petclinic",
+      "protocol": "http",
+      "host": "10.134.77.66",
+      "port": 8080,
+      "context_path": "/petclinic",
+      "verify_ssl": false,
+      "timeout": 30,
+      "headers": {
+        "Accept": "text/html,application/json",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "description": "PetClinic Application - Target Environment"
+    },
+    "local": {
+      "base_url": "http://localhost:8080/petclinic",
+      "protocol": "http",
+      "host": "localhost",
+      "port": 8080,
+      "context_path": "/petclinic",
+      "verify_ssl": false,
+      "timeout": 30,
+      "headers": {
+        "Accept": "text/html,application/json",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "description": "PetClinic Application - Local Development"
+    }
+  },
+  "endpoints": {
+    "home": {
+      "path": "/",
+      "method": "GET",
+      "description": "PetClinic home page"
+    },
+    "owners": {
+      "search_form": "/owners/find.html",
+      "search_results": "/owners.html",
+      "list": "/owners.html?lastName=",
+      "detail": "/owners/{id}.html",
+      "create_form": "/owners/new",
+      "create": "/owners/new",
+      "edit_form": "/owners/{id}/edit.html",
+      "update": "/owners/{id}/edit",
+      "methods": {
+        "search": "GET",
+        "create": "POST",
+        "update": "POST"
+      },
+      "fields": {
+        "firstName": "string",
+        "lastName": "string",
+        "address": "string",
+        "city": "string",
+        "telephone": "string"
+      }
+    },
+    "pets": {
+      "create_form": "/owners/{ownerId}/pets/new.html",
+      "create": "/owners/{ownerId}/pets/new",
+      "edit_form": "/owners/{ownerId}/pets/{petId}/edit",
+      "update": "/owners/{ownerId}/pets/{petId}/edit",
+      "methods": {
+        "create": "POST",
+        "update": "POST"
+      },
+      "fields": {
+        "name": "string",
+        "birthDate": "date (YYYY/MM/DD)",
+        "type": "dropdown (bird, cat, dog, hamster, lizard, snake)"
+      }
+    },
+    "visits": {
+      "create_form": "/owners/{ownerId}/pets/{petId}/visits/new",
+      "create": "/owners/{ownerId}/pets/{petId}/visits/new",
+      "methods": {
+        "create": "POST"
+      },
+      "fields": {
+        "date": "date (YYYY/MM/DD)",
+        "description": "string"
+      }
+    },
+    "vets": {
+      "list_html": "/vets.html",
+      "list_json": "/vets.json",
+      "list_xml": "/vets.xml",
+      "methods": {
+        "list": "GET"
+      },
+      "response_fields": {
+        "id": "integer",
+        "firstName": "string",
+        "lastName": "string",
+        "specialties": "array of objects",
+        "nrOfSpecialties": "integer"
+      }
+    }
+  },
+  "test_scenarios": {
+    "new_client_registration": {
+      "description": "End-to-end new owner, pet, and visit creation",
+      "steps": [
+        "Search owner (verify not exists)",
+        "Create owner",
+        "Add pet to owner",
+        "Schedule first visit"
+      ],
+      "sla": {
+        "total_time": "< 5 seconds",
+        "each_step": "< 1 second"
+      }
+    },
+    "returning_client_visit": {
+      "description": "Search owner and schedule visit for existing pet",
+      "steps": [
+        "Search owner by last name",
+        "View owner detail",
+        "Add visit to existing pet"
+      ],
+      "sla": {
+        "search": "< 500ms",
+        "detail_load": "< 1 second",
+        "visit_creation": "< 1 second"
+      }
+    },
+    "multi_pet_owner": {
+      "description": "Owner with multiple pets management",
+      "steps": [
+        "Find owner with multiple pets",
+        "Add new pet",
+        "Update pet information",
+        "Schedule multiple visits"
+      ],
+      "sla": {
+        "detail_with_3_pets": "< 2 seconds",
+        "pet_operations": "< 1 second each"
+      }
+    },
+    "vet_directory_lookup": {
+      "description": "View veterinarians and specialties",
+      "steps": [
+        "Load vets list",
+        "Fetch JSON API"
+      ],
+      "sla": {
+        "html_list": "< 1 second",
+        "json_api": "< 500ms"
+      }
+    },
+    "high_volume_search": {
+      "description": "Common name search with pagination",
+      "steps": [
+        "Search common last name",
+        "Navigate paginated results",
+        "Export to PDF",
+        "Drill down to owner"
+      ],
+      "sla": {
+        "search_100_results": "< 2 seconds",
+        "pagination": "< 500ms per page",
+        "pdf_export": "< 3 seconds"
+      }
+    }
+  }
+}
+

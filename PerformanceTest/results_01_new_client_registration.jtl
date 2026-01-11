@@ -1,0 +1,32 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1768135340154,66,Step 1: Search Owner - Find Form,200,OK,New Client Registration Users 1-1,text,true,,6392,146,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,66,0,44
+1768135345207,416,Step 1: Search Owner - Submit Search,200,OK,New Client Registration Users 1-1,text,true,,6593,226,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Anderson,416,0,0
+1768135357061,24,Step 2: Open Add Owner Form,200,OK,New Client Registration Users 1-1,text,true,,9706,207,1,1,http://10.134.77.66:8080/petclinic/owners/new,23,0,0
+1768135361824,31,Step 2: Submit Create Owner,200,OK,New Client Registration Users 1-1,text,true,,5916,589,1,1,http://10.134.77.66:8080/petclinic/owners/16,20,0,0
+1768135361824,20,Step 2: Submit Create Owner-0,302,Found,New Client Registration Users 1-1,,true,,230,383,1,1,http://10.134.77.66:8080/petclinic/owners/new,20,0,0
+1768135361845,10,Step 2: Submit Create Owner-1,200,OK,New Client Registration Users 1-1,text,true,,5686,206,1,1,http://10.134.77.66:8080/petclinic/owners/16,10,0,0
+1768135373850,36,Step 3: Open Add Pet Form,200,OK,New Client Registration Users 1-1,text,true,,8459,215,1,1,http://10.134.77.66:8080/petclinic/owners/16/pets/new,36,0,0
+1768135378549,54,Step 3: Submit Create Pet,200,OK,New Client Registration Users 1-1,text,true,,7454,548,1,1,http://10.134.77.66:8080/petclinic/owners/16,41,0,0
+1768135378549,41,Step 3: Submit Create Pet-0,302,Found,New Client Registration Users 1-1,,true,,230,342,1,1,http://10.134.77.66:8080/petclinic/owners/16/pets/new,41,0,0
+1768135378590,13,Step 3: Submit Create Pet-1,200,OK,New Client Registration Users 1-1,text,true,,7224,206,1,1,http://10.134.77.66:8080/petclinic/owners/16,13,0,0
+1768135388114,31,Step 4: Open Add Visit Form,200,OK,New Client Registration Users 1-1,text,true,,7637,225,1,1,http://10.134.77.66:8080/petclinic/owners/16/pets/17/visits/new,31,0,0
+1768135390152,33,Step 4: Submit Create Visit,200,OK,New Client Registration Users 1-1,text,true,,7667,575,1,1,http://10.134.77.66:8080/petclinic/owners/16,20,0,0
+1768135390152,20,Step 4: Submit Create Visit-0,302,Found,New Client Registration Users 1-1,,true,,230,369,1,1,http://10.134.77.66:8080/petclinic/owners/16/pets/17/visits/new,20,0,0
+1768135390172,13,Step 4: Submit Create Visit-1,200,OK,New Client Registration Users 1-1,text,true,,7437,206,1,1,http://10.134.77.66:8080/petclinic/owners/16,13,0,0
+1768135394005,7,Step 1: Search Owner - Find Form,200,OK,New Client Registration Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,7,0,2
+1768140375390,57,Step 1: Search Owner - Find Form,200,OK,New Client Registration Users 1-1,text,true,,6392,146,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,57,0,35
+1768140380328,19,Step 1: Search Owner - Submit Search,200,OK,New Client Registration Users 1-1,text,true,,5549,226,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Anderson,19,0,0
+1768140391348,14,Step 2: Open Add Owner Form,200,OK,New Client Registration Users 1-1,text,true,,9706,207,1,1,http://10.134.77.66:8080/petclinic/owners/new,14,0,0
+1768140395907,81,Step 2: Submit Create Owner,200,OK,New Client Registration Users 1-1,text,true,,5916,589,1,1,http://10.134.77.66:8080/petclinic/owners/11,68,0,0
+1768140395907,68,Step 2: Submit Create Owner-0,302,Found,New Client Registration Users 1-1,,true,,230,383,1,1,http://10.134.77.66:8080/petclinic/owners/new,68,0,0
+1768140395977,11,Step 2: Submit Create Owner-1,200,OK,New Client Registration Users 1-1,text,true,,5686,206,1,1,http://10.134.77.66:8080/petclinic/owners/11,11,0,0
+1768140406862,42,Step 3: Open Add Pet Form,200,OK,New Client Registration Users 1-1,text,true,,8459,215,1,1,http://10.134.77.66:8080/petclinic/owners/11/pets/new,42,0,0
+1768140411472,60,Step 3: Submit Create Pet,200,OK,New Client Registration Users 1-1,text,true,,7454,548,1,1,http://10.134.77.66:8080/petclinic/owners/11,43,0,0
+1768140411472,43,Step 3: Submit Create Pet-0,302,Found,New Client Registration Users 1-1,,true,,230,342,1,1,http://10.134.77.66:8080/petclinic/owners/11/pets/new,43,0,0
+1768140411515,17,Step 3: Submit Create Pet-1,200,OK,New Client Registration Users 1-1,text,true,,7224,206,1,1,http://10.134.77.66:8080/petclinic/owners/11,17,0,0
+1768140421088,38,Step 4: Open Add Visit Form,200,OK,New Client Registration Users 1-1,text,true,,7637,225,1,1,http://10.134.77.66:8080/petclinic/owners/11/pets/14/visits/new,38,0,0
+1768140423130,41,Step 4: Submit Create Visit,200,OK,New Client Registration Users 1-1,text,true,,7667,575,1,1,http://10.134.77.66:8080/petclinic/owners/11,24,0,0
+1768140423130,24,Step 4: Submit Create Visit-0,302,Found,New Client Registration Users 1-1,,true,,230,369,1,1,http://10.134.77.66:8080/petclinic/owners/11/pets/14/visits/new,24,0,0
+1768140423155,16,Step 4: Submit Create Visit-1,200,OK,New Client Registration Users 1-1,text,true,,7437,206,1,1,http://10.134.77.66:8080/petclinic/owners/11,15,0,0
+1768140426732,9,Step 1: Search Owner - Find Form,200,OK,New Client Registration Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,9,0,2
+1768140431430,17,Step 1: Search Owner - Submit Search,200,OK,New Client Registration Users 1-1,text,true,,5550,227,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Rodriguez,17,0,0

@@ -1,0 +1,37 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1768139244762,866,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,7269,139,1,1,http://10.134.77.66:8080/petclinic/vets.html,866,0,3
+1768139245629,20,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,19,0,0
+1768139248429,505,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,505,0,2
+1768139248936,5,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,4,0,0
+1768139251596,452,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,452,0,2
+1768139252049,7,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139254855,397,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,397,0,2
+1768139255254,6,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139258186,312,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,312,0,2
+1768139258499,6,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139261396,374,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,374,0,2
+1768139261771,6,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139264546,323,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,322,0,2
+1768139264870,7,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,7,0,0
+1768139267821,277,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,277,0,3
+1768139268101,6,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139270684,322,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,322,0,2
+1768139271008,6,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139273743,295,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,295,0,2
+1768139274039,8,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,8,0,0
+1768139276995,407,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,407,0,2
+1768139277403,7,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139280150,315,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,315,0,3
+1768139280466,7,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,7,0,0
+1768139283049,312,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,312,0,2
+1768139283362,7,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139285945,362,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,362,0,2
+1768139286308,9,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,8,0,0
+1768139288911,309,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,309,0,2
+1768139289221,5,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,5,0,0
+1768139292146,407,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,407,0,2
+1768139292554,6,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139295089,1163,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,false,"The operation lasted too long: It took 1,163 milliseconds, but should not have lasted longer than 1,000 milliseconds.",6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,1163,0,2
+1768139296254,6,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0
+1768139299197,237,Step 1: Load Veterinarians HTML List,200,OK,Vet Directory Lookup Users 1-1,text,true,,6369,206,1,1,http://10.134.77.66:8080/petclinic/vets.html,237,0,2
+1768139299435,6,Step 2: Fetch Veterinarians JSON API,200,OK,Vet Directory Lookup Users 1-1,text,true,,1011,206,1,1,http://10.134.77.66:8080/petclinic/vets.json,6,0,0

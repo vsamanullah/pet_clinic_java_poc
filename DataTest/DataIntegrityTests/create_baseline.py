@@ -5,13 +5,15 @@ This script creates a baseline snapshot of the database state BEFORE migration.
 The baseline is saved as a JSON file that can be used later for comparison.
 """
 
-import pyodbc
+import psycopg2
+import psycopg2.extras
 import json
 import hashlib
 from datetime import datetime
 from typing import Dict, List, Tuple, Optional
 import logging
 import sys
+import argparse
 
 # Configure logging
 logging.basicConfig(
@@ -25,15 +27,41 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def load_config(config_path="../../db_config.json", env_name="target"):
+    """Load database configuration from JSON file"""
+    with open(config_path, 'r') as f:
+        config = json.load(f)
+    return config['environments'][env_name]
+
+
+def build_connection_params(env_config):
+    """Build PostgreSQL connection parameters from environment config"""
+    return {
+        'host': env_config['host'],
+        'port': env_config['port'],
+        'database': env_config['database'],
+        'user': env_config['username'],
+        'password': env_config['password'],
+        'sslmode': 'require'
+    }
+
+
 class DatabaseBaseline:
     """Creates and manages database baseline snapshots"""
     
-    def __init__(self, connection_string: str):
-        self.connection_string = connection_string
+    def __init__(self, connection_params: dict, env_name: str = "target"):
+        self.connection_params = connection_params
+        self.env_name = env_name
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
         # Extract database connection details
-        self.db_info = self._extract_db_info(connection_string)
+        self.db_info = {
+            'server': connection_params.get('host', 'Unknown'),
+            'port': connection_params.get('port', 'Unknown'),
+            'database': connection_params.get('database', 'Unknown'),
+            'driver': 'PostgreSQL (psycopg2)',
+            'auth_type': f"PostgreSQL Authentication (User: {connection_params.get('user', 'Unknown')})"
+        }
         
         self.baseline_data = {
             'timestamp': self.timestamp,
@@ -46,43 +74,10 @@ class DatabaseBaseline:
             'schema_info': {}
         }
     
-    def _extract_db_info(self, connection_string: str) -> Dict:
-        """Extract database connection information from connection string"""
-        db_info = {
-            'server': 'Unknown',
-            'database': 'Unknown',
-            'driver': 'Unknown',
-            'auth_type': 'Unknown'
-        }
-        
-        try:
-            # Parse connection string
-            parts = connection_string.split(';')
-            for part in parts:
-                if '=' in part:
-                    key, value = part.split('=', 1)
-                    key = key.strip().upper()
-                    value = value.strip()
-                    
-                    if key == 'SERVER':
-                        db_info['server'] = value
-                    elif key == 'DATABASE':
-                        db_info['database'] = value
-                    elif key == 'DRIVER':
-                        db_info['driver'] = value.strip('{}')
-                    elif key == 'UID':
-                        db_info['auth_type'] = f'SQL Authentication (User: {value})'
-                    elif 'TRUSTED_CONNECTION' in key and value.lower() in ['yes', 'true']:
-                        db_info['auth_type'] = 'Windows Authentication'
-        except:
-            pass
-        
-        return db_info
-    
     def get_connection(self):
         """Get database connection"""
         try:
-            return pyodbc.connect(self.connection_string)
+            return psycopg2.connect(**self.connection_params)
         except Exception as e:
             logger.error(f"Failed to connect to database: {e}")
             raise
@@ -92,7 +87,7 @@ class DatabaseBaseline:
         try:
             conn = self.get_connection()
             cursor = conn.cursor()
-            cursor.execute("SELECT @@VERSION")
+            cursor.execute("SELECT version()")
             version = cursor.fetchone()[0]
             conn.close()
             logger.info(f"  Connected to database successfully")
@@ -107,25 +102,25 @@ class DatabaseBaseline:
         cursor = conn.cursor()
         cursor.execute("""
             SELECT 
-                TABLE_SCHEMA,
-                TABLE_NAME
-            FROM INFORMATION_SCHEMA.TABLES
-            WHERE TABLE_TYPE = 'BASE TABLE'
-                AND TABLE_SCHEMA NOT IN ('sys', 'INFORMATION_SCHEMA')
-            ORDER BY TABLE_SCHEMA, TABLE_NAME
+                table_schema,
+                table_name
+            FROM information_schema.tables
+            WHERE table_type = 'BASE TABLE'
+                AND table_schema NOT IN ('pg_catalog', 'information_schema')
+            ORDER BY table_schema, table_name
         """)
         return cursor.fetchall()
     
     def _get_row_count(self, conn, schema: str, table_name: str) -> int:
         """Get row count for a table"""
         cursor = conn.cursor()
-        cursor.execute(f"SELECT COUNT(*) FROM [{schema}].[{table_name}]")
+        cursor.execute(f'SELECT COUNT(*) FROM "{schema}"."{table_name}"')
         return cursor.fetchone()[0]
     
     def _get_table_data(self, conn, schema: str, table_name: str) -> List[Dict]:
         """Get all data from a table"""
         cursor = conn.cursor()
-        cursor.execute(f"SELECT * FROM [{schema}].[{table_name}] ORDER BY 1")
+        cursor.execute(f'SELECT * FROM "{schema}"."{table_name}" ORDER BY 1')
         
         columns = [column[0] for column in cursor.description]
         rows = []
@@ -154,14 +149,14 @@ class DatabaseBaseline:
         cursor = conn.cursor()
         cursor.execute("""
             SELECT 
-                COLUMN_NAME,
-                DATA_TYPE,
-                CHARACTER_MAXIMUM_LENGTH,
-                IS_NULLABLE,
-                COLUMN_DEFAULT
-            FROM INFORMATION_SCHEMA.COLUMNS
-            WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?
-            ORDER BY ORDINAL_POSITION
+                column_name,
+                data_type,
+                character_maximum_length,
+                is_nullable,
+                column_default
+            FROM information_schema.columns
+            WHERE table_schema = %s AND table_name = %s
+            ORDER BY ordinal_position
         """, (schema, table_name))
         
         columns = []
@@ -181,27 +176,21 @@ class DatabaseBaseline:
         cursor = conn.cursor()
         cursor.execute("""
             SELECT 
-                fk.name AS FK_Name,
-                tp.name AS Parent_Table,
-                cp.name AS Parent_Column,
-                tr.name AS Referenced_Table,
-                cr.name AS Referenced_Column
-            FROM sys.foreign_keys AS fk
-            INNER JOIN sys.foreign_key_columns AS fkc 
-                ON fk.object_id = fkc.constraint_object_id
-            INNER JOIN sys.tables AS tp 
-                ON fk.parent_object_id = tp.object_id
-            INNER JOIN sys.columns AS cp 
-                ON fkc.parent_object_id = cp.object_id 
-                AND fkc.parent_column_id = cp.column_id
-            INNER JOIN sys.tables AS tr 
-                ON fk.referenced_object_id = tr.object_id
-            INNER JOIN sys.columns AS cr 
-                ON fkc.referenced_object_id = cr.object_id 
-                AND fkc.referenced_column_id = cr.column_id
-            INNER JOIN sys.schemas AS s 
-                ON tp.schema_id = s.schema_id
-            WHERE s.name = ? AND tp.name = ?
+                tc.constraint_name,
+                kcu.table_name AS parent_table,
+                kcu.column_name AS parent_column,
+                ccu.table_name AS referenced_table,
+                ccu.column_name AS referenced_column
+            FROM information_schema.table_constraints AS tc
+            JOIN information_schema.key_column_usage AS kcu
+                ON tc.constraint_name = kcu.constraint_name
+                AND tc.table_schema = kcu.table_schema
+            JOIN information_schema.constraint_column_usage AS ccu
+                ON ccu.constraint_name = tc.constraint_name
+                AND ccu.table_schema = tc.table_schema
+            WHERE tc.constraint_type = 'FOREIGN KEY'
+                AND tc.table_schema = %s
+                AND tc.table_name = %s
         """, (schema, table_name))
         
         fks = []
@@ -221,37 +210,25 @@ class DatabaseBaseline:
         cursor = conn.cursor()
         cursor.execute("""
             SELECT 
-                i.name AS Index_Name,
-                i.type_desc AS Index_Type,
-                i.is_unique,
-                i.is_primary_key,
-                COL_NAME(ic.object_id, ic.column_id) AS Column_Name
-            FROM sys.indexes AS i
-            INNER JOIN sys.index_columns AS ic 
-                ON i.object_id = ic.object_id 
-                AND i.index_id = ic.index_id
-            INNER JOIN sys.tables AS t 
-                ON i.object_id = t.object_id
-            INNER JOIN sys.schemas AS s 
-                ON t.schema_id = s.schema_id
-            WHERE s.name = ? AND t.name = ? AND i.name IS NOT NULL
-            ORDER BY i.name, ic.key_ordinal
+                indexname,
+                indexdef
+            FROM pg_indexes
+            WHERE schemaname = %s AND tablename = %s
+            ORDER BY indexname
         """, (schema, table_name))
         
-        indexes = {}
+        indexes = []
         for row in cursor.fetchall():
             idx_name = row[0]
-            if idx_name not in indexes:
-                indexes[idx_name] = {
-                    'name': idx_name,
-                    'type': row[1],
-                    'is_unique': bool(row[2]),
-                    'is_primary_key': bool(row[3]),
-                    'columns': []
-                }
-            indexes[idx_name]['columns'].append(row[4])
+            idx_def = row[1]
+            indexes.append({
+                'name': idx_name,
+                'definition': idx_def,
+                'is_unique': 'UNIQUE' in idx_def.upper(),
+                'is_primary_key': 'PRIMARY KEY' in idx_def.upper()
+            })
         
-        return list(indexes.values())
+        return indexes
     
     def create_baseline(self):
         """Create complete baseline snapshot of database"""
@@ -317,7 +294,7 @@ class DatabaseBaseline:
     def save_baseline(self, filename: Optional[str] = None) -> str:
         """Save baseline to JSON file"""
         if filename is None:
-            filename = f"baseline_{self.timestamp}.json"
+            filename = f"baseline_{self.env_name}_{self.timestamp}.json"
         
         with open(filename, 'w') as f:
             json.dump(self.baseline_data, f, indent=2, default=str)
@@ -354,65 +331,46 @@ class DatabaseBaseline:
 
 
 def main():
-    """Main entry point"""
+    """Main execution function"""
+    parser = argparse.ArgumentParser(description='Create database baseline snapshot')
+    parser.add_argument('--env', type=str, default='source',
+                        choices=['source', 'target', 'local'],
+                        help='Environment to use (default: source)')
+    parser.add_argument('--config', type=str, default='../../db_config.json',
+                        help='Path to config file (default: ../../db_config.json)')
+    parser.add_argument('--output', type=str, default=None,
+                        help='Output filename for baseline (default: baseline_<env>_<timestamp>.json)')
+    
+    args = parser.parse_args()
+    
     print("""
+══════════════════════════════════════════════════════════════════════
           Database Baseline Creator - Part 1 
           Create a baseline snapshot BEFORE migration  
+══════════════════════════════════════════════════════════════════════
     """)
     
-    # Database connection string - Try multiple driver options
-    # Try to find best available driver (prefer newer ones)
-    available_driver = None
+    # Load configuration
     try:
-        import pyodbc
-        all_drivers = pyodbc.drivers()
-        
-        # Preferred driver order (newest first)
-        preferred_drivers = [
-            "ODBC Driver 17 for SQL Server",
-            "ODBC Driver 13 for SQL Server",
-            "SQL Server Native Client 11.0",
-            "SQL Server"
-        ]
-        
-        for driver in preferred_drivers:
-            if driver in all_drivers:
-                available_driver = driver
-                print(f"Using ODBC driver: {available_driver}")
-                break
-                
-        if not available_driver:
-            available_driver = "SQL Server"
-            print(f"Using default ODBC driver: {available_driver}")
+        env_config = load_config(args.config, args.env)
+        connection_params = build_connection_params(env_config)
     except Exception as e:
-        available_driver = "SQL Server"
-        print(f"Warning: Could not detect drivers, using default: {e}")
-    
-    # Remote SQL Server connection with SQL Authentication
-    # Force use of ODBC Driver 18 for SQL Server (supports encryption parameters)
-    driver_to_use = "ODBC Driver 18 for SQL Server" if "ODBC Driver 18 for SQL Server" in pyodbc.drivers() else available_driver
-    
-    connection_string = (
-        f"DRIVER={{{driver_to_use}}};"
-        "SERVER=10.134.77.68,1433;"  # Using IP address directly
-        "DATABASE=BookStore-Master;"
-        "UID=testuser;"
-        "PWD=TestDb@26#!;"
-        "Encrypt=yes;"
-        "TrustServerCertificate=yes;"
-    )
-    
-    # Allow custom connection string from command line
-    if len(sys.argv) > 1:
-        connection_string = sys.argv[1]
+        print(f"\n✗ Error loading configuration: {e}")
+        sys.exit(1)
     
     # Create baseline
-    baseline = DatabaseBaseline(connection_string)
+    baseline = DatabaseBaseline(connection_params, args.env)
+    
+    # Print environment info
+    print("="*70)
+    print(f"Environment: {args.env.upper()}")
+    print(f"Database: {env_config['database']}")
+    print(f"Server: {env_config.get('host', 'N/A')}")
+    print("="*70)
     
     # Test connection
     if not baseline.test_connection():
-        print("\n Cannot connect to database. Please check connection string.")
-        print(f"   Connection: {connection_string}")
+        print("\n✗ Cannot connect to database. Please check configuration.")
         sys.exit(1)
     
     # Info message
@@ -428,24 +386,30 @@ def main():
         baseline.print_summary()
         
         # Save baseline
-        filename = baseline.save_baseline()
+        filename = baseline.save_baseline(args.output)
         
         print("\n" + "="*70)
-        print(" BASELINE CREATED SUCCESSFULLY")
+        print("✓ BASELINE CREATED SUCCESSFULLY")
         print("="*70)
-        print(f"\n Baseline file: {filename}")
-        print("\n Next Steps:")
-        print("   1. Run your database migration")
-        print("   2. Execute: python verify_migration.py")
-        print(f"   3. Use baseline file: {filename}")
+        print(f"\n✓ Baseline file: {filename}")
+        print(f"✓ Environment: {args.env.upper()}")
+        print("\n  Next Steps:")
+        if args.env == 'source':
+            print("    1. Run your database migration")
+            print("    2. Create target baseline: python create_baseline.py --env target")
+            print("    3. Compare: python verify_migration.py --source <source_baseline> --target <target_baseline>")
+        else:
+            print(f"    1. Use this baseline for verification")
+            print(f"    2. Run: python verify_migration.py")
         print("="*70)
         
         sys.exit(0)
         
     except Exception as e:
-        logger.error(f"\n Error creating baseline: {e}")
+        logger.error(f"\n✗ Error creating baseline: {e}")
         sys.exit(1)
 
 
 if __name__ == "__main__":
     main()
+
