@@ -599,9 +599,29 @@ def main():
     # Run JMeter Test
     print_color("[3/7] Running JMeter performance test...", Colors.YELLOW)
     print(f"    Test File: {test_file}")
+    
+    # Extract API config parameters
+    host = env_config.get('host', 'localhost')
+    port = env_config.get('port', 8080)
+    protocol = env_config.get('protocol', 'http')
+    context_path = env_config.get('context_path', '/petclinic')
+    base_url = env_config.get('base_url', f"{protocol}://{host}:{port}{context_path}")
+    
+    print(f"    Target: {protocol}://{host}:{port}{context_path}")
     print()
     
-    jmeter_cmd = f'jmeter -n -t {test_file} -l results/{test_name}_results.jtl -j results/{test_name}_jmeter.log -e -o results/{test_name}_report'
+    # Construct JMeter command with properties
+    jmeter_cmd = (
+        f'jmeter -n -t {test_file} '
+        f'-l results/{test_name}_results.jtl '
+        f'-j results/{test_name}_jmeter.log '
+        f'-e -o results/{test_name}_report '
+        f'-JHOST={host} '
+        f'-JPORT={port} '
+        f'-JPROTOCOL={protocol} '
+        f'-JCONTEXT_PATH={context_path} '
+        f'-JBASE_URL={base_url}'
+    )
     
     jmeter_result = subprocess.run(jmeter_cmd, shell=True)
     

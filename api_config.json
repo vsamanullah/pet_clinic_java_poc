@@ -15,9 +15,9 @@
       "description": "PetClinic Application - Target Environment"
     },
     "target": {
-      "base_url": "http://10.134.77.66:8080/petclinic",
+      "base_url": "http://10.134.77.99:8080/petclinic",
       "protocol": "http",
-      "host": "10.134.77.66",
+      "host": "10.134.77.99",
       "port": 8080,
       "context_path": "/petclinic",
       "verify_ssl": false,

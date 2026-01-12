@@ -8,27 +8,27 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="DB_SERVER" elementType="Argument">
             <stringProp name="Argument.name">DB_SERVER</stringProp>
-            <stringProp name="Argument.value">10.130.73.5</stringProp>
+            <stringProp name="Argument.value">${__P(DB_SERVER,10.130.73.5)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="DB_PORT" elementType="Argument">
             <stringProp name="Argument.name">DB_PORT</stringProp>
-            <stringProp name="Argument.value">5432</stringProp>
+            <stringProp name="Argument.value">${__P(DB_PORT,5432)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="DB_NAME" elementType="Argument">
             <stringProp name="Argument.name">DB_NAME</stringProp>
-            <stringProp name="Argument.value">petclinic</stringProp>
+            <stringProp name="Argument.value">${__P(DB_NAME,petclinic)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="DB_USER" elementType="Argument">
             <stringProp name="Argument.name">DB_USER</stringProp>
-            <stringProp name="Argument.value">petclinic</stringProp>
+            <stringProp name="Argument.value">${__P(DB_USER,petclinic)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="DB_PASSWORD" elementType="Argument">
             <stringProp name="Argument.name">DB_PASSWORD</stringProp>
-            <stringProp name="Argument.value">petclinic</stringProp>
+            <stringProp name="Argument.value">${__P(DB_PASSWORD,petclinic)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -57,9 +57,9 @@
       </JDBCDataSource>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Owners Operations - CRUD (30%)">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.num_threads">20</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <longProp name="ThreadGroup.duration">60</longProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -180,9 +180,9 @@ VALUES (&apos;Del${__Random(1000000,9999999)}&apos;, &apos;Test&apos;, &apos;Del
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Pets Operations - CRUD (30%)">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.num_threads">20</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <longProp name="ThreadGroup.duration">60</longProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -320,9 +320,9 @@ VALUES (&apos;DelPet${__Random(100000,999999)}&apos;, CURRENT_DATE, (SELECT id F
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Visits Operations - CRUD (25%)">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.num_threads">20</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <longProp name="ThreadGroup.duration">60</longProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -395,9 +395,9 @@ VALUES (&apos;DelPet${__Random(100000,999999)}&apos;, CURRENT_DATE, (SELECT id F
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Vets Operations - Read Only (10%)">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.num_threads">20</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <longProp name="ThreadGroup.duration">60</longProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -471,9 +471,9 @@ VALUES (&apos;DelPet${__Random(100000,999999)}&apos;, CURRENT_DATE, (SELECT id F
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Types Operations - Read Only (3%)">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.num_threads">20</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <longProp name="ThreadGroup.duration">60</longProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -533,9 +533,9 @@ VALUES (&apos;DelPet${__Random(100000,999999)}&apos;, CURRENT_DATE, (SELECT id F
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Specialties Operations - Read Only (2%)">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.num_threads">20</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
-        <longProp name="ThreadGroup.duration">60</longProp>
+        <longProp name="ThreadGroup.duration">600</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>

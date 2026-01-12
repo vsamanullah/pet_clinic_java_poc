@@ -11,27 +11,27 @@ Priority: Medium | Frequency: 100-150/day | SLA: &lt; 1s</stringProp>
         <collectionProp name="Arguments.arguments">
           <elementProp name="BASE_URL" elementType="Argument">
             <stringProp name="Argument.name">BASE_URL</stringProp>
-            <stringProp name="Argument.value">http://10.134.77.66:8080</stringProp>
+            <stringProp name="Argument.value">${__P(BASE_URL,http://10.134.77.66:8080)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="CONTEXT_PATH" elementType="Argument">
             <stringProp name="Argument.name">CONTEXT_PATH</stringProp>
-            <stringProp name="Argument.value">/petclinic</stringProp>
+            <stringProp name="Argument.value">${__P(CONTEXT_PATH,/petclinic)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PROTOCOL" elementType="Argument">
             <stringProp name="Argument.name">PROTOCOL</stringProp>
-            <stringProp name="Argument.value">http</stringProp>
+            <stringProp name="Argument.value">${__P(PROTOCOL,http)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="HOST" elementType="Argument">
             <stringProp name="Argument.name">HOST</stringProp>
-            <stringProp name="Argument.value">10.134.77.66</stringProp>
+            <stringProp name="Argument.value">${__P(HOST,10.134.77.66)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PORT" elementType="Argument">
             <stringProp name="Argument.name">PORT</stringProp>
-            <stringProp name="Argument.value">8080</stringProp>
+            <stringProp name="Argument.value">${__P(PORT,8080)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>

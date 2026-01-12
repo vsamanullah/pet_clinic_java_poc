@@ -30,3 +30,32 @@ timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success
 1768140423155,16,Step 4: Submit Create Visit-1,200,OK,New Client Registration Users 1-1,text,true,,7437,206,1,1,http://10.134.77.66:8080/petclinic/owners/11,15,0,0
 1768140426732,9,Step 1: Search Owner - Find Form,200,OK,New Client Registration Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,9,0,2
 1768140431430,17,Step 1: Search Owner - Submit Search,200,OK,New Client Registration Users 1-1,text,true,,5550,227,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Rodriguez,17,0,0
+1768236276038,21051,Step 1: Search Owner - Find Form,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,Non HTTP response message: Connect to 10.134.77.99:8080 [/10.134.77.99] failed: Connection timed out: connect,New Client Registration Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2604,0,1,1,http://10.134.77.99:8080/petclinic/owners/find.html,0,0,21050
+1768236301607,21004,Step 1: Search Owner - Submit Search,Non HTTP response code: org.apache.http.conn.HttpHostConnectException,Non HTTP response message: Connect to 10.134.77.99:8080 [/10.134.77.99] failed: Connection timed out: connect,New Client Registration Users 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: org.apache.http.conn.HttpHostConnectException]]]
+
+****** comparison: [[[200                                                                  ]]]
+
+/",2604,0,1,1,http://10.134.77.99:8080/petclinic/owners.html?lastName=Anderson,0,0,21004
+1768236415170,53,Step 1: Search Owner - Find Form,200,OK,New Client Registration Users 1-1,text,true,,6392,146,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,53,0,29
+1768236419909,540,Step 1: Search Owner - Submit Search,200,OK,New Client Registration Users 1-1,text,true,,8455,226,1,1,http://10.134.77.66:8080/petclinic/owners.html?lastName=Anderson,540,0,0
+1768236430071,11,Step 2: Open Add Owner Form,200,OK,New Client Registration Users 1-1,text,true,,9706,207,1,1,http://10.134.77.66:8080/petclinic/owners/new,11,0,0
+1768236434975,40,Step 2: Submit Create Owner,200,OK,New Client Registration Users 1-1,text,true,,5919,590,1,1,http://10.134.77.66:8080/petclinic/owners/524,25,0,0
+1768236434975,25,Step 2: Submit Create Owner-0,302,Found,New Client Registration Users 1-1,,true,,231,383,1,1,http://10.134.77.66:8080/petclinic/owners/new,25,0,0
+1768236435002,13,Step 2: Submit Create Owner-1,200,OK,New Client Registration Users 1-1,text,true,,5688,207,1,1,http://10.134.77.66:8080/petclinic/owners/524,13,0,0
+1768236445804,23,Step 3: Open Add Pet Form,200,OK,New Client Registration Users 1-1,text,true,,8460,216,1,1,http://10.134.77.66:8080/petclinic/owners/524/pets/new,22,0,0
+1768236450635,61,Step 3: Submit Create Pet,200,OK,New Client Registration Users 1-1,text,true,,7463,550,1,1,http://10.134.77.66:8080/petclinic/owners/524,44,0,0
+1768236450635,44,Step 3: Submit Create Pet-0,302,Found,New Client Registration Users 1-1,,true,,231,343,1,1,http://10.134.77.66:8080/petclinic/owners/524/pets/new,44,0,0
+1768236450680,16,Step 3: Submit Create Pet-1,200,OK,New Client Registration Users 1-1,text,true,,7232,207,1,1,http://10.134.77.66:8080/petclinic/owners/524,16,0,0
+1768236462288,145,Step 4: Open Add Visit Form,200,OK,New Client Registration Users 1-1,text,true,,7642,228,1,1,http://10.134.77.66:8080/petclinic/owners/524/pets/1002/visits/new,145,0,0
+1768236464434,46,Step 4: Submit Create Visit,200,OK,New Client Registration Users 1-1,text,true,,7676,579,1,1,http://10.134.77.66:8080/petclinic/owners/524,30,0,0
+1768236464434,30,Step 4: Submit Create Visit-0,302,Found,New Client Registration Users 1-1,,true,,231,372,1,1,http://10.134.77.66:8080/petclinic/owners/524/pets/1002/visits/new,30,0,0
+1768236464464,16,Step 4: Submit Create Visit-1,200,OK,New Client Registration Users 1-1,text,true,,7445,207,1,1,http://10.134.77.66:8080/petclinic/owners/524,15,0,0
+1768236468168,6,Step 1: Search Owner - Find Form,200,OK,New Client Registration Users 1-1,text,true,,5492,213,1,1,http://10.134.77.66:8080/petclinic/owners/find.html,6,0,2
