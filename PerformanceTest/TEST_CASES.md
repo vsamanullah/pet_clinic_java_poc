@@ -9,7 +9,7 @@
 | **Last Updated** | January 11, 2026 |
 | **Test Framework** | Apache JMeter 5.6.3 |
 | **Application** | PetClinic Spring Application |
-| **Base URL** | http://10.134.77.66:8080/petclinic |
+| **Base URL** | http://<ip>:<port>/petclinic |
 | **Total Test Scenarios** | 6 |
 
 ---
@@ -31,8 +31,8 @@
 |--------------|-------------|--------------|
 | JMeter 5.6.3 | Performance testing tool | `jmeter --version` |
 | Python 3.14+ | Test orchestration | `python --version` |
-| PostgreSQL 9.6.24 | Database server | Connection to 10.130.73.5:5432 |
-| Application Server | PetClinic running | http://10.134.77.66:8080/petclinic |
+| PostgreSQL 9.6.24 | Database server | Connection to Database <ip>:<port> |
+| Application Server | PetClinic running | https://<ip>:<port>/petclinic |
 | Test Data | Baseline data loaded | 510 owners, 997 pets, 962 visits |
 | CSV Files | Parameterization data | common_last_names.csv, multi_pet_owner_ids.csv, etc. |
 
@@ -462,12 +462,12 @@ Measure performance when loading owner pages with extensive pet and visit histor
 ## Test Execution Guidelines
 
 ### Pre-Test Checklist
-1. ✅ Verify application is running: http://10.134.77.66:8080/petclinic
-2. ✅ Verify database connection: 10.130.73.5:5432
-3. ✅ Load baseline data: `python populate_test_data.py`
-4. ✅ Verify CSV files are present and populated
-5. ✅ Clear previous test results from results/ directory
-6. ✅ Check JMeter heap size: `-Xms1g -Xmx4g`
+1. Verify application is running: https://<ip>:<port>/petclinic
+2. Verify database connection: Database <ip>:<port>
+3. Load baseline data: `python populate_test_data.py`
+4. Verify CSV files are present and populated
+5. Clear previous test results from results/ directory
+6. Check JMeter heap size: `-Xms1g -Xmx4g`
 
 ### Test Execution Command
 ```bash
@@ -528,19 +528,19 @@ python run_with_profiling.py <test_script.jmx> --env target
 ## Success Criteria
 
 ### Test Execution Success
-- ✅ All 6 scenarios execute without script errors
-- ✅ Error rate below threshold for each load profile
-- ✅ Response times meet 95th percentile targets
-- ✅ No critical errors in application logs
-- ✅ Database integrity maintained after test
+- All 6 scenarios execute without script errors
+- Error rate below threshold for each load profile
+- Response times meet 95th percentile targets
+- No critical errors in application logs
+- Database integrity maintained after test
 
 ### Performance Success
-- ✅ 95th percentile response time < 3s (normal load)
-- ✅ 95th percentile response time < 5s (peak load)
-- ✅ Error rate < 1% (normal load)
-- ✅ Error rate < 5% (peak load)
-- ✅ Throughput meets target TPS for each operation
-- ✅ System stable under sustained load (4 hours)
+- 95th percentile response time < 3s (normal load)
+- 95th percentile response time < 5s (peak load)
+- Error rate < 1% (normal load)
+- Error rate < 5% (peak load)
+- Throughput meets target TPS for each operation
+- System stable under sustained load (4 hours)
 
 ---
 

@@ -4,8 +4,7 @@
 This document outlines the critical business scenarios identified through Playwright-based application analysis of the PetClinic application. These scenarios represent real-world user journeys that will be used as the foundation for performance testing.
 
 **Application**: Spring PetClinic Demo  
-**URL**: http://10.134.77.66:8080/petclinic  
-**Analysis Date**: 2026-01-11  
+**URL**: http://<IP address>/petclinic  
 **Test Data**: 1,000 owners, 2,000 pets, 50 vets, 5,000 visits
 
 ---

@@ -30,6 +30,9 @@ python run_and_monitor_db_test.py --env target --cleanup
 python run_and_monitor_db_test.py --env target --no-seed
 ```
 
+### Execution Steps
+<To be updated>
+
 ### Tables Under Test
 - **owners** - Pet owners with contact information
 - **pets** - Pet records linked to owners
@@ -693,11 +696,11 @@ jmeter_results/
 ## Conclusion
 
 This test suite provides comprehensive coverage of:
-- ✅ All 7 PetClinic tables
-- ✅ CRUD operations under concurrent load
-- ✅ Foreign key constraint validation
-- ✅ Complex multi-table queries
-- ✅ System resource monitoring
-- ✅ Stress testing and edge cases
+- All 7 PetClinic tables
+- CRUD operations under concurrent load
+- Foreign key constraint validation
+- Complex multi-table queries
+- System resource monitoring
+- Stress testing and edge cases
 
 Results from these tests inform database tuning, capacity planning, and application optimization decisions for the PetClinic application.
