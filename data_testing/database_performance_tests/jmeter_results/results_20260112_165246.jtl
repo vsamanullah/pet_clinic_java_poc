@@ -1,0 +1,20 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1768236771122,1367,Owners - UPDATE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,1367,0,1363
+1768236771114,1382,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1379,0,1371
+1768236771114,1382,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,1379,0,1371
+1768236771114,1382,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1379,0,1371
+1768236771114,1383,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1379,0,1371
+1768236771114,1383,Pets - COUNT,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,12,0,1,6,null,1379,0,1371
+1768236774495,3,Owners - INSERT for Delete,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,3,0,0
+1768236774498,2,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,2,0,0
+1768236774498,3,Visits - COUNT,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,14,0,1,6,null,3,0,0
+1768236774498,3,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,3,0,0
+1768236774500,1,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1,0,0
+1768236774500,1,Pets - SELECT by ID,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,36,0,1,6,null,1,0,0
+1768236776501,1,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,1,0,0
+1768236776502,1,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236776500,5,Owners - DELETE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,5,0,0
+1768236776503,2,Vets - SELECT by ID,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,2,0,1
+1768236772492,8,Owners - Create then Delete,200,"Number of samples in transaction : 2, number of failing samples : 0",Owners Operations - CRUD (30%) 1-1,,true,,18,0,1,6,null,8,4004,0
+1768236776504,2,Pets - SELECT with JOIN,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,67,0,1,6,null,2,0,0
+1768236776504,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,0

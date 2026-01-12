@@ -1,0 +1,3 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1768237077491,10054,Owners - INSERT for Delete,null 0,java.sql.SQLException: Cannot create PoolableConnectionFactory (The connection attempt failed.),Owners Operations - CRUD (30%) 1-1,text,false,,72,0,20,120,null,0,0,10054
+1768237078484,19069,Specialties - SELECT by ID,null 0,java.sql.SQLException: Cannot create PoolableConnectionFactory (The connection attempt failed.),Specialties Operations - Read Only (2%) 6-20,text,false,,72,0,20,120,null,0,0,19068

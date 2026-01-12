@@ -1,0 +1,192 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1768236807711,1510,Pets - SELECT with JOIN,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,67,0,1,6,null,1508,0,1503
+1768236807711,1510,Visits - SELECT by Pet,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1508,0,1503
+1768236807711,1510,Owners - INSERT for Delete,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,1509,0,1503
+1768236807711,1510,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,1508,0,1503
+1768236807711,1511,Vets - COUNT,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,12,0,1,6,null,1508,0,1503
+1768236807711,1510,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1508,0,1503
+1768236811224,2,Vets - COUNT,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,12,0,1,6,null,2,0,0
+1768236811224,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,0
+1768236811224,2,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,2,0,0
+1768236811224,3,Types - SELECT by Name,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,3,0,1
+1768236811224,4,Pets - SELECT All,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,36,0,1,6,null,4,0,0
+1768236811224,6,Owners - DELETE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,6,0,0
+1768236805702,1516,Owners - Create then Delete,200,"Number of samples in transaction : 2, number of failing samples : 0",Owners Operations - CRUD (30%) 1-1,,true,,18,0,1,6,null,1515,4011,1503
+1768236813229,1,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1,0,0
+1768236813228,2,Types - SELECT by Name,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,2,0,0
+1768236813228,2,Visits - COUNT,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,14,0,1,6,null,2,0,0
+1768236813230,1,Vets - SELECT by ID,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,1,0,0
+1768236813230,7,Pets - INSERT,23502 0,"org.postgresql.util.PSQLException: ERROR: null value in column ""type_id"" violates not-null constraint
+  Detail: Failing row contains (1003, Pet378385, 2016-01-12, null, null).",Pets Operations - CRUD (30%) 2-1,text,false,,140,0,1,6,null,0,0,0
+1768236813237,1,Owners - UPDATE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,1,0,0
+1768236815232,1,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236815232,1,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236815232,2,Visits - SELECT by Pet,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,2,0,0
+1768236815232,3,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,2,0,0
+1768236815238,1,Pets - COUNT,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,12,0,1,6,null,1,0,0
+1768236815240,1,Owners - SELECT by ID,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,47,0,1,6,null,1,0,0
+1768236817234,1,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236817235,1,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236817236,1,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1,0,0
+1768236817237,1,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,1,0,0
+1768236817240,1,Pets - INSERT for Delete,23502 0,"org.postgresql.util.PSQLException: ERROR: null value in column ""type_id"" violates not-null constraint
+  Detail: Failing row contains (1004, DelPet147285, 2026-01-12, null, null).",Pets Operations - CRUD (30%) 2-1,text,false,,143,0,1,6,null,0,0,0
+1768236817243,3,Owners - INSERT,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,2,0,0
+1768236819237,2,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,1
+1768236819237,2,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,2,0,0
+1768236819237,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,0
+1768236819239,1,Vets - SELECT by ID,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,1,0,0
+1768236819241,1,Pets - DELETE,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,9,0,1,6,null,1,0,0
+1768236815239,2,Pets - Create then Delete,,"Number of samples in transaction : 2, number of failing samples : 1",Pets Operations - CRUD (30%) 2-1,,false,,152,0,1,6,null,1,4002,0
+1768236819247,4,Owners - UPDATE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,3,0,0
+1768236821242,1,Visits - SELECT by Pet,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236821242,1,Types - SELECT by Name,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236821242,2,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1,0,0
+1768236821243,1,Vets - SELECT All,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,1,0,0
+1768236821244,1,Pets - COUNT,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,12,0,1,6,null,1,0,0
+1768236821253,3,Owners - INSERT for Delete,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,3,0,0
+1768236823245,1,Specialties - SELECT by ID,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236823245,1,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236823245,1,Vets - SELECT by ID,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,1,0,0
+1768236823245,2,Visits - COUNT,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,14,0,1,6,null,2,0,0
+1768236823246,1,Pets - SELECT with JOIN,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,67,0,1,6,null,1,0,0
+1768236823256,4,Owners - DELETE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,4,0,1
+1768236819251,7,Owners - Create then Delete,200,"Number of samples in transaction : 2, number of failing samples : 0",Owners Operations - CRUD (30%) 1-1,,true,,18,0,1,6,null,7,4001,1
+1768236825247,2,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,2,0,1
+1768236825247,3,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,3,0,1
+1768236825247,3,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,3,0,1
+1768236825247,3,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,3,0,1
+1768236825248,3,Pets - SELECT with JOIN,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,67,0,1,6,null,3,0,0
+1768236825261,4,Owners - INSERT,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,4,0,0
+1768236827250,2,Types - SELECT by Name,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,2,0,0
+1768236827250,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,0
+1768236827251,1,Vets - SELECT by ID,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,1,0,0
+1768236827252,1,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236827253,0,Pets - UPDATE,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,9,0,1,6,null,0,0,0
+1768236827265,2,Owners - SELECT All,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,175,0,1,6,null,2,0,0
+1768236829253,2,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236829254,1,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,1,0,0
+1768236829253,2,Vets - SELECT All,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,2,0,0
+1768236829254,1,Pets - UPDATE,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,9,0,1,6,null,1,0,0
+1768236829255,1,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236829268,1,Owners - COUNT,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,14,0,1,6,null,1,0,0
+1768236831255,2,Visits - SELECT by Pet,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,2,0,0
+1768236831256,1,Vets - COUNT,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,12,0,1,6,null,1,0,0
+1768236831256,2,Pets - UPDATE,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,9,0,1,6,null,1,0,0
+1768236831256,2,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,2,0,0
+1768236831257,1,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,1,0,0
+1768236831270,1,Owners - SELECT by ID,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,119,0,1,6,null,1,0,0
+1768236833258,2,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236833258,2,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236833258,2,Vets - SELECT All,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,2,0,0
+1768236833258,2,Pets - SELECT with JOIN,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,67,0,1,6,null,2,0,0
+1768236833259,1,Types - SELECT by Name,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236833272,3,Owners - UPDATE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,3,0,0
+1768236835261,1,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236835261,2,Vets - SELECT by ID,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,2,0,0
+1768236835261,2,Pets - INSERT,23502 0,"org.postgresql.util.PSQLException: ERROR: null value in column ""type_id"" violates not-null constraint
+  Detail: Failing row contains (1005, Pet528170, 2017-01-12, null, 527).",Pets Operations - CRUD (30%) 2-1,text,false,,139,0,1,6,null,0,0,0
+1768236835262,1,Specialties - SELECT by ID,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236835262,2,Visits - SELECT by Pet,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236835277,2,Owners - SELECT All,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,175,0,1,6,null,1,0,1
+1768236837265,1,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1,0,0
+1768236837265,2,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,2,0,0
+1768236837266,1,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236837265,2,Pets - INSERT for Delete,23502 0,"org.postgresql.util.PSQLException: ERROR: null value in column ""type_id"" violates not-null constraint
+  Detail: Failing row contains (1006, DelPet971606, 2026-01-12, null, 529).",Pets Operations - CRUD (30%) 2-1,text,false,,142,0,1,6,null,0,0,0
+1768236837267,1,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236837280,2,Owners - SELECT by ID,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,119,0,1,6,null,2,0,1
+1768236839267,1,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236839268,1,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,1,0,0
+1768236839268,1,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,1,0,0
+1768236839268,2,Pets - DELETE,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,9,0,1,6,null,1,0,0
+1768236835263,4,Pets - Create then Delete,,"Number of samples in transaction : 2, number of failing samples : 1",Pets Operations - CRUD (30%) 2-1,,false,,151,0,1,6,null,1,4002,0
+1768236839268,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,0
+1768236839283,1,Owners - SELECT by ID,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,119,0,1,6,null,1,0,0
+1768236841270,2,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,2,0,0
+1768236841271,1,Visits - SELECT by Pet,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236841271,2,Pets - SELECT All,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,36,0,1,6,null,1,0,0
+1768236841271,2,Vets - COUNT,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,12,0,1,6,null,1,0,0
+1768236841271,2,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,2,0,0
+1768236841286,4,Owners - UPDATE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,3,0,0
+1768236843275,1,Pets - UPDATE,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,9,0,1,6,null,1,0,0
+1768236843275,1,Specialties - SELECT by ID,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236843275,1,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236843275,1,Vets - COUNT,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,12,0,1,6,null,1,0,0
+1768236843275,1,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236843290,4,Owners - UPDATE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,4,0,0
+1768236845276,2,Specialties - SELECT by ID,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,2,0,1
+1768236845276,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,1
+1768236845276,2,Pets - SELECT All,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,36,0,1,6,null,2,0,1
+1768236845277,2,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236845278,1,Vets - SELECT All,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,1,0,0
+1768236845294,2,Owners - SELECT by ID,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,119,0,1,6,null,1,0,0
+1768236847278,1,Specialties - SELECT by ID,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236847278,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,1,0,0
+1768236847279,1,Vets - COUNT,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,12,0,1,6,null,1,0,0
+1768236847280,1,Types - SELECT by Name,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236847280,4,Pets - INSERT for Delete,23502 0,"org.postgresql.util.PSQLException: ERROR: null value in column ""type_id"" violates not-null constraint
+  Detail: Failing row contains (1007, DelPet526556, 2026-01-12, null, 529).",Pets Operations - CRUD (30%) 2-1,text,false,,142,0,1,6,null,0,0,0
+1768236847295,2,Owners - COUNT,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,14,0,1,6,null,1,0,0
+1768236849280,2,Vets - COUNT,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,12,0,1,6,null,1,0,0
+1768236849280,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,0
+1768236849281,1,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1,0,0
+1768236849283,1,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,1,0,0
+1768236849286,1,Pets - DELETE,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,9,0,1,6,null,1,0,0
+1768236845279,5,Pets - Create then Delete,,"Number of samples in transaction : 2, number of failing samples : 1",Pets Operations - CRUD (30%) 2-1,,false,,151,0,1,6,null,1,4005,0
+1768236849297,3,Owners - UPDATE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,3,0,0
+1768236851284,1,Vets - SELECT by ID,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,1,0,0
+1768236851284,1,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236851284,2,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236851285,1,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236851289,2,Pets - INSERT,23502 0,"org.postgresql.util.PSQLException: ERROR: null value in column ""type_id"" violates not-null constraint
+  Detail: Failing row contains (1008, Pet428417, 2022-01-12, null, 527).",Pets Operations - CRUD (30%) 2-1,text,false,,139,0,1,6,null,0,0,0
+1768236851302,1,Owners - SELECT All,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,190,0,1,6,null,1,0,0
+1768236853287,1,Specialties - SELECT by ID,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236853287,1,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,1,0,0
+1768236853287,1,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,1,0,0
+1768236853288,1,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236853292,2,Pets - SELECT with JOIN,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,67,0,1,6,null,2,0,0
+1768236853305,3,Owners - INSERT for Delete,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,3,0,0
+1768236855289,2,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,2,0,0
+1768236855289,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,0
+1768236855290,1,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1,0,0
+1768236855290,1,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,1,0,0
+1768236855296,1,Pets - INSERT for Delete,23502 0,"org.postgresql.util.PSQLException: ERROR: null value in column ""type_id"" violates not-null constraint
+  Detail: Failing row contains (1009, DelPet193539, 2026-01-12, null, 527).",Pets Operations - CRUD (30%) 2-1,text,false,,142,0,1,6,null,0,0,0
+1768236855308,6,Owners - DELETE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,6,0,1
+1768236851303,9,Owners - Create then Delete,200,"Number of samples in transaction : 2, number of failing samples : 0",Owners Operations - CRUD (30%) 1-1,,true,,18,0,1,6,null,9,4002,1
+1768236857292,1,Vets - SELECT by ID,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,1,0,0
+1768236857292,1,Types - SELECT by Name,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236857292,1,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1,0,0
+1768236857292,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,0
+1768236857298,1,Pets - DELETE,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,9,0,1,6,null,0,0,0
+1768236853294,2,Pets - Create then Delete,,"Number of samples in transaction : 2, number of failing samples : 1",Pets Operations - CRUD (30%) 2-1,,false,,151,0,1,6,null,0,4003,0
+1768236857315,3,Owners - INSERT for Delete,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,3,0,0
+1768236859294,1,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,1,0,0
+1768236859295,1,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236859295,1,Vets - SELECT by ID,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,24,0,1,6,null,1,0,0
+1768236859295,1,Specialties - SELECT by ID,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,1,0,0
+1768236859299,1,Pets - SELECT by ID,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,36,0,1,6,null,1,0,0
+1768236859318,4,Owners - DELETE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,4,0,1
+1768236855314,7,Owners - Create then Delete,200,"Number of samples in transaction : 2, number of failing samples : 0",Owners Operations - CRUD (30%) 1-1,,true,,18,0,1,6,null,7,4001,1
+1768236861297,2,Visits - SELECT All,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,33,0,1,6,null,2,0,0
+1768236861298,2,Types - SELECT All,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236861298,2,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,2,0,0
+1768236861298,2,Specialties - SELECT All,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,6,null,2,0,0
+1768236861302,1,Pets - SELECT All,200,OK,Pets Operations - CRUD (30%) 2-1,text,true,,36,0,1,6,null,1,0,0
+1768236861324,2,Owners - SELECT by ID,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,119,0,1,6,null,2,0,0
+1768236863300,2,Types - COUNT,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,13,0,1,6,null,2,0,0
+1768236863300,2,Vets - COUNT,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,12,0,1,6,null,2,0,0
+1768236863301,1,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,1,0,0
+1768236863302,1,Specialties - COUNT,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,18,0,1,6,null,1,0,0
+1768236863305,2,Pets - INSERT,23502 0,"org.postgresql.util.PSQLException: ERROR: null value in column ""type_id"" violates not-null constraint
+  Detail: Failing row contains (1010, Pet108232, 2023-01-12, null, 527).",Pets Operations - CRUD (30%) 2-1,text,false,,139,0,1,6,null,0,0,0
+1768236863328,3,Owners - INSERT,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,6,null,3,0,0
+1768236865303,1,Types - SELECT by Name,200,OK,Types Operations - Read Only (3%) 5-1,text,true,,8,0,1,6,null,1,0,0
+1768236865303,2,Vets - SELECT with Specialties,200,OK,Vets Operations - Read Only (10%) 4-1,text,true,,36,0,1,6,null,2,0,0
+1768236865303,2,Visits - SELECT with JOIN,200,OK,Visits Operations - CRUD (25%) 3-1,text,true,,53,0,1,6,null,2,0,0
+1768236865305,1,Specialties - SELECT by ID,200,OK,Specialties Operations - Read Only (2%) 6-1,text,true,,8,0,1,3,null,1,0,0
+1768236865309,1,Pets - INSERT,23502 0,"org.postgresql.util.PSQLException: ERROR: null value in column ""type_id"" violates not-null constraint
+  Detail: Failing row contains (1011, Pet242056, 2017-01-12, null, 529).",Pets Operations - CRUD (30%) 2-1,text,false,,139,0,1,2,null,0,0,0
+1768236865332,4,Owners - UPDATE,200,OK,Owners Operations - CRUD (30%) 1-1,text,true,,9,0,1,1,null,4,0,0

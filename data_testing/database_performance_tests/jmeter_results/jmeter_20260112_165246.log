@@ -1,0 +1,111 @@
+2026-01-12 16:52:48,134 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-01-12 16:52:48,165 INFO o.a.j.JMeter: Loading user properties from: C:\Tools\apache-jmeter-5.6.3\bin\user.properties
+2026-01-12 16:52:48,167 INFO o.a.j.JMeter: Loading system properties from: C:\Tools\apache-jmeter-5.6.3\bin\system.properties
+2026-01-12 16:52:48,167 INFO o.a.j.JMeter: Setting JMeter property: DB_SERVER=10.130.73.5
+2026-01-12 16:52:48,167 INFO o.a.j.JMeter: Setting JMeter property: DB_PORT=5432
+2026-01-12 16:52:48,167 INFO o.a.j.JMeter: Setting JMeter property: DB_NAME=petclinic
+2026-01-12 16:52:48,168 INFO o.a.j.JMeter: Setting JMeter property: DB_USER=petclinic
+2026-01-12 16:52:48,168 INFO o.a.j.JMeter: Setting JMeter property: DB_PASSWORD=petclinic
+2026-01-12 16:52:48,178 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-01-12 16:52:48,178 INFO o.a.j.JMeter: Version 5.6.3
+2026-01-12 16:52:48,178 INFO o.a.j.JMeter: java.version=17.0.12
+2026-01-12 16:52:48,178 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-01-12 16:52:48,178 INFO o.a.j.JMeter: os.name=Windows Server 2022
+2026-01-12 16:52:48,178 INFO o.a.j.JMeter: os.arch=amd64
+2026-01-12 16:52:48,178 INFO o.a.j.JMeter: os.version=10.0
+2026-01-12 16:52:48,179 INFO o.a.j.JMeter: file.encoding=Cp1252
+2026-01-12 16:52:48,179 INFO o.a.j.JMeter: java.awt.headless=true
+2026-01-12 16:52:48,179 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-01-12 16:52:48,179 INFO o.a.j.JMeter: Available Processors =8
+2026-01-12 16:52:48,192 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-01-12 16:52:48,193 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-01-12 16:52:48,193 INFO o.a.j.JMeter: JMeterHome=C:\Tools\apache-jmeter-5.6.3
+2026-01-12 16:52:48,193 INFO o.a.j.JMeter: user.dir  =D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests
+2026-01-12 16:52:48,194 INFO o.a.j.JMeter: PWD       =D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests
+2026-01-12 16:52:48,196 INFO o.a.j.JMeter: IP: 10.134.77.85 Name: gcp-gvd-win2022 FullName: 10.134.77.85
+2026-01-12 16:52:48,217 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests\jmeter_results\report_20260112_165246'
+2026-01-12 16:52:48,221 INFO o.a.j.s.FileServer: Default base='D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests'
+2026-01-12 16:52:48,223 INFO o.a.j.s.FileServer: Set new base='D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests'
+2026-01-12 16:52:48,504 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-01-12 16:52:48,536 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-01-12 16:52:48,540 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-01-12 16:52:48,546 INFO o.a.j.s.SaveService: Loading file: D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests\JMeter_DB_Mixed_Operations.jmx
+2026-01-12 16:52:48,698 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-01-12 16:52:48,703 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2026-01-12 16:52:48,704 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests\jmeter_results\results_20260112_165246.jtl
+2026-01-12 16:52:48,704 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: C:\Tools\apache-jmeter-5.6.3\bin\reportgenerator.properties
+2026-01-12 16:52:48,705 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2026-01-12 16:52:48,710 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2026-01-12 16:52:48,714 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2026-01-12 16:52:48,721 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2026-01-12 16:52:48,721 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2026-01-12 16:52:48,722 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2026-01-12 16:52:48,722 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2026-01-12 16:52:48,722 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2026-01-12 16:52:48,722 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2026-01-12 16:52:48,723 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2026-01-12 16:52:48,727 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,727 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,728 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,728 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,728 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,728 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,728 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,729 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,729 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,729 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:52:48,730 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2026-01-12 16:52:48,731 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2026-01-12 16:52:48,731 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2026-01-12 16:52:48,731 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2026-01-12 16:52:48,731 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2026-01-12 16:52:48,731 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2026-01-12 16:52:48,748 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-01-12 16:52:48,749 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-01-12 16:52:48,750 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-01-12 16:52:48,759 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-01-12 16:52:48,759 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-01-12 16:52:49,065 INFO o.a.j.JMeter: Running test (1768236769065)
+2026-01-12 16:52:49,092 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Owners Operations - CRUD (30%)
+2026-01-12 16:52:49,093 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Owners Operations - CRUD (30%).
+2026-01-12 16:52:49,093 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:52:49,093 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2026-01-12 16:52:49,099 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-01-12 16:52:49,099 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 2 : Pets Operations - CRUD (30%)
+2026-01-12 16:52:49,100 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Pets Operations - CRUD (30%).
+2026-01-12 16:52:49,100 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:52:49,100 INFO o.a.j.t.ThreadGroup: Starting thread group... number=2 threads=1 ramp-up=1 delayedStart=false
+2026-01-12 16:52:49,101 INFO o.a.j.t.ThreadGroup: Started thread group number 2
+2026-01-12 16:52:49,101 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 3 : Visits Operations - CRUD (25%)
+2026-01-12 16:52:49,101 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Visits Operations - CRUD (25%).
+2026-01-12 16:52:49,101 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:52:49,102 INFO o.a.j.t.ThreadGroup: Starting thread group... number=3 threads=1 ramp-up=1 delayedStart=false
+2026-01-12 16:52:49,103 INFO o.a.j.t.ThreadGroup: Started thread group number 3
+2026-01-12 16:52:49,103 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 4 : Vets Operations - Read Only (10%)
+2026-01-12 16:52:49,103 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Vets Operations - Read Only (10%).
+2026-01-12 16:52:49,103 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:52:49,103 INFO o.a.j.t.ThreadGroup: Starting thread group... number=4 threads=1 ramp-up=1 delayedStart=false
+2026-01-12 16:52:49,103 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-1
+2026-01-12 16:52:49,106 INFO o.a.j.t.ThreadGroup: Started thread group number 4
+2026-01-12 16:52:49,106 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 5 : Types Operations - Read Only (3%)
+2026-01-12 16:52:49,106 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Types Operations - Read Only (3%).
+2026-01-12 16:52:49,106 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-01-12 16:52:49,107 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:52:49,107 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-01-12 16:52:49,107 INFO o.a.j.t.ThreadGroup: Starting thread group... number=5 threads=1 ramp-up=1 delayedStart=false
+2026-01-12 16:52:49,107 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-01-12 16:52:49,107 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-01-12 16:52:49,107 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-1
+2026-01-12 16:52:49,108 INFO o.a.j.t.ThreadGroup: Started thread group number 5
+2026-01-12 16:52:49,108 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 6 : Specialties Operations - Read Only (2%)
+2026-01-12 16:52:49,108 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Specialties Operations - Read Only (2%).
+2026-01-12 16:52:49,108 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:52:49,108 INFO o.a.j.t.ThreadGroup: Starting thread group... number=6 threads=1 ramp-up=1 delayedStart=false
+2026-01-12 16:52:49,109 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-1
+2026-01-12 16:52:49,108 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-1
+2026-01-12 16:52:49,109 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-1
+2026-01-12 16:52:49,109 INFO o.a.j.t.ThreadGroup: Started thread group number 6
+2026-01-12 16:52:49,110 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-01-12 16:52:49,110 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-1
+2026-01-12 16:52:56,810 INFO o.a.j.r.ResultCollector: Shutdown hook started
+2026-01-12 16:52:56,812 INFO o.a.j.r.ResultCollector: Shutdown hook ended

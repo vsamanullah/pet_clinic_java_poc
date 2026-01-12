@@ -1,0 +1,224 @@
+2026-01-12 16:57:54,581 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Loading user properties from: C:\Tools\apache-jmeter-5.6.3\bin\user.properties
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Loading system properties from: C:\Tools\apache-jmeter-5.6.3\bin\system.properties
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Setting JMeter property: DB_SERVER=10.130.73.99
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Setting JMeter property: DB_PORT=5432
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Setting JMeter property: DB_NAME=petclinic
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Setting JMeter property: DB_USER=petclinic
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Setting JMeter property: DB_PASSWORD=petclinic
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Version 5.6.3
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: java.version=17.0.12
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: os.name=Windows Server 2022
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: os.arch=amd64
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: os.version=10.0
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: file.encoding=Cp1252
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: java.awt.headless=true
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-01-12 16:57:54,613 INFO o.a.j.JMeter: Available Processors =8
+2026-01-12 16:57:54,629 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-01-12 16:57:54,629 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-01-12 16:57:54,629 INFO o.a.j.JMeter: JMeterHome=C:\Tools\apache-jmeter-5.6.3
+2026-01-12 16:57:54,629 INFO o.a.j.JMeter: user.dir  =D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests
+2026-01-12 16:57:54,629 INFO o.a.j.JMeter: PWD       =D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests
+2026-01-12 16:57:54,645 INFO o.a.j.JMeter: IP: 10.134.77.85 Name: gcp-gvd-win2022 FullName: 10.134.77.85
+2026-01-12 16:57:54,660 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests\jmeter_results\report_20260112_165752'
+2026-01-12 16:57:54,660 INFO o.a.j.s.FileServer: Default base='D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests'
+2026-01-12 16:57:54,660 INFO o.a.j.s.FileServer: Set new base='D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests'
+2026-01-12 16:57:54,899 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-01-12 16:57:54,930 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-01-12 16:57:54,930 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-01-12 16:57:54,946 INFO o.a.j.s.SaveService: Loading file: D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests\JMeter_DB_Mixed_Operations.jmx
+2026-01-12 16:57:55,086 INFO o.a.j.JMeter: Creating summariser <summary>
+2026-01-12 16:57:55,090 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2026-01-12 16:57:55,091 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: D:\TestAutomation\POC-UniCredit\pet_clinic_java_poc\DataTest\DataBasePerfromanceTests\jmeter_results\results_20260112_165752.jtl
+2026-01-12 16:57:55,091 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: C:\Tools\apache-jmeter-5.6.3\bin\reportgenerator.properties
+2026-01-12 16:57:55,092 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2026-01-12 16:57:55,097 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2026-01-12 16:57:55,101 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2026-01-12 16:57:55,108 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2026-01-12 16:57:55,108 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2026-01-12 16:57:55,109 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2026-01-12 16:57:55,109 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2026-01-12 16:57:55,109 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2026-01-12 16:57:55,109 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2026-01-12 16:57:55,110 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2026-01-12 16:57:55,114 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,115 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,115 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,115 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,115 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,116 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,116 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,116 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,116 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,117 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-01-12 16:57:55,118 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2026-01-12 16:57:55,118 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2026-01-12 16:57:55,118 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2026-01-12 16:57:55,119 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2026-01-12 16:57:55,119 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2026-01-12 16:57:55,119 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2026-01-12 16:57:55,135 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-01-12 16:57:55,136 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-01-12 16:57:55,137 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-01-12 16:57:55,142 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-01-12 16:57:55,142 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-01-12 16:57:55,434 INFO o.a.j.JMeter: Running test (1768237075434)
+2026-01-12 16:57:55,454 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Owners Operations - CRUD (30%)
+2026-01-12 16:57:55,454 INFO o.a.j.e.StandardJMeterEngine: Starting 20 threads for group Owners Operations - CRUD (30%).
+2026-01-12 16:57:55,454 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:57:55,454 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=20 ramp-up=1 delayedStart=false
+2026-01-12 16:57:55,474 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-01-12 16:57:55,474 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-01-12 16:57:55,474 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-01-12 16:57:55,474 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-01-12 16:57:55,478 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-1
+2026-01-12 16:57:55,484 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-01-12 16:57:55,484 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 2 : Pets Operations - CRUD (30%)
+2026-01-12 16:57:55,484 INFO o.a.j.e.StandardJMeterEngine: Starting 20 threads for group Pets Operations - CRUD (30%).
+2026-01-12 16:57:55,484 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:57:55,484 INFO o.a.j.t.ThreadGroup: Starting thread group... number=2 threads=20 ramp-up=1 delayedStart=false
+2026-01-12 16:57:55,486 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-1
+2026-01-12 16:57:55,497 INFO o.a.j.t.ThreadGroup: Started thread group number 2
+2026-01-12 16:57:55,498 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 3 : Visits Operations - CRUD (25%)
+2026-01-12 16:57:55,498 INFO o.a.j.e.StandardJMeterEngine: Starting 20 threads for group Visits Operations - CRUD (25%).
+2026-01-12 16:57:55,498 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:57:55,498 INFO o.a.j.t.ThreadGroup: Starting thread group... number=3 threads=20 ramp-up=1 delayedStart=false
+2026-01-12 16:57:55,499 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-1
+2026-01-12 16:57:55,507 INFO o.a.j.t.ThreadGroup: Started thread group number 3
+2026-01-12 16:57:55,507 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 4 : Vets Operations - Read Only (10%)
+2026-01-12 16:57:55,507 INFO o.a.j.e.StandardJMeterEngine: Starting 20 threads for group Vets Operations - Read Only (10%).
+2026-01-12 16:57:55,507 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:57:55,508 INFO o.a.j.t.ThreadGroup: Starting thread group... number=4 threads=20 ramp-up=1 delayedStart=false
+2026-01-12 16:57:55,509 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-1
+2026-01-12 16:57:55,516 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-2
+2026-01-12 16:57:55,517 INFO o.a.j.t.ThreadGroup: Started thread group number 4
+2026-01-12 16:57:55,517 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 5 : Types Operations - Read Only (3%)
+2026-01-12 16:57:55,517 INFO o.a.j.e.StandardJMeterEngine: Starting 20 threads for group Types Operations - Read Only (3%).
+2026-01-12 16:57:55,518 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:57:55,518 INFO o.a.j.t.ThreadGroup: Starting thread group... number=5 threads=20 ramp-up=1 delayedStart=false
+2026-01-12 16:57:55,519 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-1
+2026-01-12 16:57:55,527 INFO o.a.j.t.ThreadGroup: Started thread group number 5
+2026-01-12 16:57:55,527 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 6 : Specialties Operations - Read Only (2%)
+2026-01-12 16:57:55,527 INFO o.a.j.e.StandardJMeterEngine: Starting 20 threads for group Specialties Operations - Read Only (2%).
+2026-01-12 16:57:55,527 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-01-12 16:57:55,528 INFO o.a.j.t.ThreadGroup: Starting thread group... number=6 threads=20 ramp-up=1 delayedStart=false
+2026-01-12 16:57:55,529 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-1
+2026-01-12 16:57:55,536 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-2
+2026-01-12 16:57:55,537 INFO o.a.j.t.ThreadGroup: Started thread group number 6
+2026-01-12 16:57:55,537 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-01-12 16:57:55,549 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-2
+2026-01-12 16:57:55,562 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-2
+2026-01-12 16:57:55,567 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-3
+2026-01-12 16:57:55,571 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-2
+2026-01-12 16:57:55,581 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-2
+2026-01-12 16:57:55,587 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-3
+2026-01-12 16:57:55,601 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-3
+2026-01-12 16:57:55,610 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-3
+2026-01-12 16:57:55,613 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-4
+2026-01-12 16:57:55,620 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-3
+2026-01-12 16:57:55,631 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-3
+2026-01-12 16:57:55,636 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-4
+2026-01-12 16:57:55,649 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-4
+2026-01-12 16:57:55,661 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-5
+2026-01-12 16:57:55,662 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-4
+2026-01-12 16:57:55,672 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-4
+2026-01-12 16:57:55,679 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-4
+2026-01-12 16:57:55,687 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-5
+2026-01-12 16:57:55,701 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-5
+2026-01-12 16:57:55,709 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-6
+2026-01-12 16:57:55,710 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-5
+2026-01-12 16:57:55,719 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-5
+2026-01-12 16:57:55,731 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-5
+2026-01-12 16:57:55,737 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-6
+2026-01-12 16:57:55,751 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-6
+2026-01-12 16:57:55,758 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-7
+2026-01-12 16:57:55,761 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-6
+2026-01-12 16:57:55,770 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-6
+2026-01-12 16:57:55,781 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-6
+2026-01-12 16:57:55,787 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-7
+2026-01-12 16:57:55,799 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-7
+2026-01-12 16:57:55,807 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-8
+2026-01-12 16:57:55,810 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-7
+2026-01-12 16:57:55,819 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-7
+2026-01-12 16:57:55,830 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-7
+2026-01-12 16:57:55,837 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-8
+2026-01-12 16:57:55,849 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-8
+2026-01-12 16:57:55,858 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-9
+2026-01-12 16:57:55,860 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-8
+2026-01-12 16:57:55,870 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-8
+2026-01-12 16:57:55,880 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-8
+2026-01-12 16:57:55,886 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-9
+2026-01-12 16:57:55,901 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-9
+2026-01-12 16:57:55,910 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-10
+2026-01-12 16:57:55,910 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-9
+2026-01-12 16:57:55,922 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-9
+2026-01-12 16:57:55,929 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-9
+2026-01-12 16:57:55,936 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-10
+2026-01-12 16:57:55,949 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-10
+2026-01-12 16:57:55,961 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-11
+2026-01-12 16:57:55,962 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-10
+2026-01-12 16:57:55,969 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-10
+2026-01-12 16:57:55,980 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-10
+2026-01-12 16:57:55,986 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-11
+2026-01-12 16:57:56,001 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-11
+2026-01-12 16:57:56,009 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-12
+2026-01-12 16:57:56,010 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-11
+2026-01-12 16:57:56,021 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-11
+2026-01-12 16:57:56,031 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-11
+2026-01-12 16:57:56,036 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-12
+2026-01-12 16:57:56,049 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-12
+2026-01-12 16:57:56,057 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-13
+2026-01-12 16:57:56,060 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-12
+2026-01-12 16:57:56,071 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-12
+2026-01-12 16:57:56,081 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-12
+2026-01-12 16:57:56,086 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-13
+2026-01-12 16:57:56,099 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-13
+2026-01-12 16:57:56,108 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-14
+2026-01-12 16:57:56,111 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-13
+2026-01-12 16:57:56,120 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-13
+2026-01-12 16:57:56,130 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-13
+2026-01-12 16:57:56,137 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-14
+2026-01-12 16:57:56,149 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-14
+2026-01-12 16:57:56,156 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-15
+2026-01-12 16:57:56,160 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-14
+2026-01-12 16:57:56,170 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-14
+2026-01-12 16:57:56,180 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-14
+2026-01-12 16:57:56,186 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-15
+2026-01-12 16:57:56,199 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-15
+2026-01-12 16:57:56,208 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-16
+2026-01-12 16:57:56,210 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-15
+2026-01-12 16:57:56,220 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-15
+2026-01-12 16:57:56,230 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-15
+2026-01-12 16:57:56,235 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-16
+2026-01-12 16:57:56,249 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-16
+2026-01-12 16:57:56,256 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-17
+2026-01-12 16:57:56,260 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-16
+2026-01-12 16:57:56,270 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-16
+2026-01-12 16:57:56,281 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-16
+2026-01-12 16:57:56,287 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-17
+2026-01-12 16:57:56,299 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-17
+2026-01-12 16:57:56,306 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-18
+2026-01-12 16:57:56,312 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-17
+2026-01-12 16:57:56,321 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-17
+2026-01-12 16:57:56,329 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-17
+2026-01-12 16:57:56,338 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-18
+2026-01-12 16:57:56,349 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-18
+2026-01-12 16:57:56,357 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-19
+2026-01-12 16:57:56,361 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-18
+2026-01-12 16:57:56,369 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-18
+2026-01-12 16:57:56,381 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-18
+2026-01-12 16:57:56,388 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-19
+2026-01-12 16:57:56,401 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-19
+2026-01-12 16:57:56,407 INFO o.a.j.t.JMeterThread: Thread started: Owners Operations - CRUD (30%) 1-20
+2026-01-12 16:57:56,411 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-19
+2026-01-12 16:57:56,420 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-19
+2026-01-12 16:57:56,430 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-19
+2026-01-12 16:57:56,436 INFO o.a.j.t.JMeterThread: Thread started: Pets Operations - CRUD (30%) 2-20
+2026-01-12 16:57:56,449 INFO o.a.j.t.JMeterThread: Thread started: Visits Operations - CRUD (25%) 3-20
+2026-01-12 16:57:56,461 INFO o.a.j.t.JMeterThread: Thread started: Vets Operations - Read Only (10%) 4-20
+2026-01-12 16:57:56,469 INFO o.a.j.t.JMeterThread: Thread started: Types Operations - Read Only (3%) 5-20
+2026-01-12 16:57:56,480 INFO o.a.j.t.JMeterThread: Thread started: Specialties Operations - Read Only (2%) 6-20
+2026-01-12 16:58:19,988 INFO o.a.j.r.ResultCollector: Shutdown hook started
