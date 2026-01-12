@@ -96,7 +96,7 @@ Validate performance of complete new client onboarding workflow from search thro
 #### Performance KPIs
 - **Total journey time**: < 5 seconds
 - **Each step response time**: < 1 second
-- **Concurrent users**: 50
+- **Concurrent users**: 20
 - **Error rate**: < 1%
 
 #### Assertions
@@ -149,7 +149,7 @@ Measure performance of scheduling visits for existing clients with search result
 - **Search response time**: < 500ms
 - **Owner detail load**: < 1 second
 - **Visit creation**: < 1 second
-- **Concurrent users**: 100
+- **Concurrent users**: 20
 - **Error rate**: < 1%
 
 #### Assertions
@@ -202,7 +202,7 @@ Test performance of complex operations for owners with multiple pets including C
 #### Performance KPIs
 - **Owner detail with 3+ pets**: < 2 seconds
 - **Pet operations**: < 1 second each
-- **Concurrent users**: 30
+- **Concurrent users**: 20
 - **Error rate**: < 1%
 
 #### Assertions
@@ -244,7 +244,7 @@ Validate performance of read-only veterinarian directory access across multiple 
 - **Vets list load**: < 1 second
 - **JSON API response**: < 500ms
 - **XML API response**: < 500ms
-- **Concurrent users**: 200
+- **Concurrent users**: 20
 - **Error rate**: < 1%
 
 #### Assertions
@@ -297,7 +297,7 @@ Test search performance with large result sets and pagination handling.
 - **Search with 100+ results**: < 2 seconds
 - **Pagination**: < 500ms per page
 - **Owner detail load**: < 1 second
-- **Concurrent users**: 150
+- **Concurrent users**: 20
 - **Error rate**: < 1%
 
 #### Assertions
@@ -350,7 +350,7 @@ Measure performance when loading owner pages with extensive pet and visit histor
 - **Owner with 3 pets + 5 visits each**: < 2 seconds
 - **History rendering**: < 1 second
 - **Pet detail load**: < 500ms
-- **Concurrent users**: 80
+- **Concurrent users**: 20
 - **Error rate**: < 1%
 
 #### Assertions

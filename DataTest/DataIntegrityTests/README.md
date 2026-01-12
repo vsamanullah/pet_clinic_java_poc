@@ -48,7 +48,7 @@ The **PetClinicDataIntegrity** module provides comprehensive automated testing t
 
 ```bash
 # Navigate to module directory
-cd PetClinicDataTesting\PetClinicDataIntegrity
+cd DataTest\DataIntegrityTests
 
 # Install Python dependencies
 pip install psycopg2-binary
@@ -164,7 +164,7 @@ python create_snapshot.py --env source --config /path/to/db_config.json
 ```
 
 **Generated Files:**
-- `petclinic_snapshot_<env>_YYYYMMDD_HHMMSS.json`: Complete database snapshot (e.g., `petclinic_snapshot_source_20260110_221752.json`)
+- `petclinic_snapshot_<env>_YYYYMMDD_HHMMSS.json`: Complete database snapshot (saved in parent directory, e.g., `../../petclinic_snapshot_source_20260110_221752.json`)
 - `snapshot_YYYYMMDD_HHMMSS.log`: Detailed execution log
 
 **Snapshot Contents:**
@@ -204,7 +204,7 @@ python populate_test_data.py
 python populate_test_data.py --additional 50
 
 # Use specific snapshot file
-python populate_test_data.py --snapshot ../petclinic_snapshot_custom.json --additional 20
+python populate_test_data.py --snapshot ../../petclinic_snapshot_custom.json --additional 20
 
 # Use different environment
 python populate_test_data.py --env target --additional 20
@@ -239,16 +239,16 @@ python populate_test_data.py --env local --config /path/to/db_config.json --addi
 
 ```bash
 # Verify source environment using specific snapshot
-python verify_migration.py --env source --snapshot ../petclinic_snapshot_source_20260110_221752.json
+python verify_migration.py --env source --snapshot ../../petclinic_snapshot_source_20260110_221752.json
 
 # Verify target environment
-python verify_migration.py --env target --snapshot ../petclinic_snapshot_target_20260110_221752.json
+python verify_migration.py --env target --snapshot ../../petclinic_snapshot_target_20260110_221752.json
 
 # Verify local environment
-python verify_migration.py --env local --snapshot ../petclinic_snapshot_local.json
+python verify_migration.py --env local --snapshot ../../petclinic_snapshot_local.json
 
 # Using custom config file
-python verify_migration.py --env target --snapshot ../snapshot.json --config /path/to/db_config.json
+python verify_migration.py --env target --snapshot ../../snapshot.json --config /path/to/db_config.json
 ```
 
 **Verification Checks:**
@@ -267,7 +267,7 @@ python verify_migration.py --env target --snapshot ../snapshot.json --config /pa
 PetClinic Database Migration Verification
 ======================================================================
 Environment: source
-Snapshot file: ../petclinic_snapshot_source_20260110_221752.json
+Snapshot file: ../../petclinic_snapshot_source_20260110_221752.json
 
 TABLE VERIFICATION RESULTS:
 ✓ types: PASSED (6 rows match baseline)
@@ -300,7 +300,7 @@ python create_snapshot.py --env source
 python populate_test_data.py --env source --additional 50
 
 # Step 3: Verify population succeeded
-python verify_migration.py --env source --snapshot ../petclinic_snapshot_source_*.json
+python verify_migration.py --env source --snapshot ../../petclinic_snapshot_source_*.json
 ```
 
 ### Workflow 2: Database Migration Testing
@@ -313,7 +313,7 @@ python create_snapshot.py --env source
 # (External migration process - e.g., pg_dump/pg_restore, custom ETL, etc.)
 
 # Step 3: Verify target matches source
-python verify_migration.py --env target --snapshot ../petclinic_snapshot_source_*.json
+python verify_migration.py --env target --snapshot ../../petclinic_snapshot_source_*.json
 
 # Step 4: Review results
 # Check verification log for any discrepancies
@@ -345,13 +345,13 @@ python check_schema.py --env target
 # CI/CD Pipeline Example
 
 # 1. Reset test database to baseline state
-python populate_test_data.py --env target --snapshot ../baseline.json
+python populate_test_data.py --env target --snapshot ../../baseline.json
 
 # 2. Run application integration tests
 # (Your PetClinic application tests)
 
 # 3. Verify data integrity after tests
-python verify_migration.py --env target --snapshot ../baseline.json
+python verify_migration.py --env target --snapshot ../../baseline.json
 
 # 4. Check exit code (0 = all passed, 1 = failures detected)
 echo $?
@@ -486,20 +486,20 @@ python -c "import psycopg2; print(psycopg2.__version__)"
 ### 1. **Always Create Snapshots Before Major Operations**
 ```bash
 # Before any migration or significant data changes
-python create_snapshot.py --env source --output ../backups/snapshot_before_migration.json
+python create_snapshot.py --env source --output ../../backups/snapshot_before_migration.json
 ```
 
 ### 2. **Use Descriptive Snapshot Names**
 ```bash
 # Include context in filename
-python create_snapshot.py --env source --output ../snapshot_v2.5_baseline.json
+python create_snapshot.py --env source --output ../../snapshot_v2.5_baseline.json
 ```
 
 ### 3. **Archive Snapshot Files**
 ```bash
 # Keep snapshots for audit trail
-mkdir -p ../snapshots/2026/january
-cp petclinic_snapshot_*.json ../snapshots/2026/january/
+mkdir -p ../../snapshots/2026/january
+cp ../../petclinic_snapshot_*.json ../../snapshots/2026/january/
 ```
 
 ### 4. **Review Logs Thoroughly**
@@ -511,30 +511,30 @@ cp petclinic_snapshot_*.json ../snapshots/2026/january/
 ```bash
 # Test population process on non-prod environment first
 python populate_test_data.py --env local --additional 50
-python verify_migration.py --env local --snapshot ../petclinic_snapshot_source.json
+python verify_migration.py --env local --snapshot ../../petclinic_snapshot_source.json
 ```
 
 ### 6. **Regular Integrity Checks**
 ```bash
 # Schedule regular integrity verification
-python verify_migration.py --env target --snapshot ../baselines/production_baseline.json
+python verify_migration.py --env target --snapshot ../../baselines/production_baseline.json
 ```
 
 ---
 
 ## Output Files Reference
 
-| File Pattern | Generated By | Purpose |
-|--------------|--------------|---------|
-| `petclinic_snapshot_<env>_YYYYMMDD_HHMMSS.json` | create_snapshot.py | Complete database snapshot with metadata |
-| `snapshot_YYYYMMDD_HHMMSS.log` | create_snapshot.py | Snapshot creation execution log |
-| `populate_YYYYMMDD_HHMMSS.log` | populate_test_data.py | Data population execution log with record counts |
-| `verification_YYYYMMDD_HHMMSS.log` | verify_migration.py | Verification test results and summary |
+| File Pattern | Generated By | Purpose | Location |
+|--------------|--------------|---------|----------|
+| `petclinic_snapshot_<env>_YYYYMMDD_HHMMSS.json` | create_snapshot.py | Complete database snapshot with metadata | Parent directory (../../) |
+| `snapshot_YYYYMMDD_HHMMSS.log` | create_snapshot.py | Snapshot creation execution log | Current directory |
+| `populate_YYYYMMDD_HHMMSS.log` | populate_test_data.py | Data population execution log with record counts | Current directory |
+| `verification_YYYYMMDD_HHMMSS.log` | verify_migration.py | Verification test results and summary | Current directory |
 
 **File Name Examples:**
-- `petclinic_snapshot_source_20260110_221752.json` - Source environment snapshot
-- `petclinic_snapshot_target_20260110_222015.json` - Target environment snapshot
-- `petclinic_snapshot_local_20260110_120000.json` - Local environment snapshot
+- `../../petclinic_snapshot_source_20260110_221752.json` - Source environment snapshot
+- `../../petclinic_snapshot_target_20260110_222015.json` - Target environment snapshot
+- `../../petclinic_snapshot_local_20260110_120000.json` - Local environment snapshot
 
 ---
 
@@ -585,13 +585,13 @@ All scripts support these common parameters:
 ```yaml
 - name: Reset Test Database
   run: |
-    cd PetClinicDataTesting/PetClinicDataIntegrity
-    python populate_test_data.py --env staging --snapshot ../baselines/baseline.json
+    cd DataTest/DataIntegrityTests
+    python populate_test_data.py --env staging --snapshot ../../baselines/baseline.json
 
 - name: Verify Database Integrity
   run: |
-    cd PetClinicDataTesting/PetClinicDataIntegrity
-    python verify_migration.py --env staging --snapshot ../baselines/baseline.json
+    cd DataTest/DataIntegrityTests
+    python verify_migration.py --env staging --snapshot ../../baselines/baseline.json
     if [ $? -ne 0 ]; then
       echo "Database integrity verification failed!"
       exit 1
@@ -604,14 +604,14 @@ All scripts support these common parameters:
   displayName: 'Populate Test Data'
   inputs:
     scriptSource: 'filePath'
-    scriptPath: 'PetClinicDataTesting/PetClinicDataIntegrity/populate_test_data.py'
+    scriptPath: 'DataTest/DataIntegrityTests/populate_test_data.py'
     arguments: '--env $(Environment) --snapshot $(SnapshotFile) --additional 100'
 
 - task: PythonScript@0
   displayName: 'Verify Database Integrity'
   inputs:
     scriptSource: 'filePath'
-    scriptPath: 'PetClinicDataTesting/PetClinicDataIntegrity/verify_migration.py'
+    scriptPath: 'DataTest/DataIntegrityTests/verify_migration.py'
     arguments: '--env $(Environment) --snapshot $(SnapshotFile)'
 ```
 

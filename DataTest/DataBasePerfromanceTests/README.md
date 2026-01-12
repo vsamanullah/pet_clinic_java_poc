@@ -1,31 +1,26 @@
 # PetClinic Database Performance Testing Suite
 
-Comprehensive database performance testing tool for PostgreSQL PetClinic database, supporting both Python-based load testing and JMeter JDBC testing with system performance profiling.
+Comprehensive database performance testing tool for PostgreSQL PetClinic database using JMeter JDBC testing with system performance profiling.
 
 ## Features
 
-- **Dual Testing Modes**: Choose between Python (psycopg2) or JMeter (PostgreSQL JDBC) testing
-- **System Performance Monitoring**: Real-time CPU, Memory, Disk, and Network metrics (Windows)
-- **Automatic Database Setup**: Clean, seed, and prepare test data automatically
-- **Performance Graphs**: Auto-generated visualization of system metrics during tests
-- **Multiple Test Types**: Owners, Pets, Vets, Visits operations (CRUD)
-- **Flexible Configuration**: Use predefined environments or custom connection strings
-- **HTML Reports**: JMeter generates detailed HTML reports with charts
+- **JMeter-Based Testing**: Industry-standard performance testing with PostgreSQL JDBC
+- **System Performance Monitoring**: Real-time CPU, Memory, Disk, and Network metrics (Windows typeperf)
+- **Automatic Database Setup**: Clean, seed, and prepare test data automatically (8,056 records)
+- **Performance Graphs**: Auto-generated 2×2 grid visualization of system metrics during tests
+- **Multiple Thread Groups**: Owners (30%), Pets (30%), Visits (25%), Vets (10%) operations
+- **CRUD Operations**: Full Create, Read, Update, Delete operations with randomization
+- **Flexible Configuration**: Use predefined environments from db_config.json
+- **HTML Reports**: JMeter automatically generates detailed HTML reports with charts and statistics
 
 ## Prerequisites
 
-### For Python Testing (Default)
-- Python 3.8+
-- Required packages:
-  ```bash
-  pip install psycopg2-binary pandas matplotlib
-  ```
-- PostgreSQL 9.6+ accessible
-
-### For JMeter Testing
-- Apache JMeter 5.6.3 or higher
-- PostgreSQL JDBC Driver (postgresql-42.7.1.jar) ✅ **INSTALLED**
-- JMeter must be in system PATH
+### Required Software
+- **Python 3.8+** for test runner script
+- **Apache JMeter 5.6.3** or higher
+- **PostgreSQL JDBC Driver** (postgresql-42.7.1.jar) ✅ **INSTALLED**
+- **PostgreSQL 9.6+** database accessible
+- **Windows OS** (recommended for performance monitoring)
 
 **JMeter Setup:**
 ```powershell
@@ -70,111 +65,136 @@ Database environments are configured in `../../db_config.json`:
 }
 ```
 
+## Required Python Packages
+
+Install dependencies for the test runner:
+```bash
+pip install psycopg2-binary pandas matplotlib
+```
+
+- **psycopg2-binary**: PostgreSQL database connection and seeding
+- **pandas**: Performance data processing
+- **matplotlib**: Performance graph generation
+
 ## Usage
 
-### Python Load Testing (Default)
+### Standard JMeter Test with Profiling
 
-Basic test with 10 concurrent connections, 50 operations each:
+Runs complete test with cleanup, seeding, and system monitoring:
 ```bash
-python run_and_monitor_db_test.py --env target -c 10 -o 50
+python run_and_monitor_db_test.py --env target
 ```
 
-Extended test with 120-second monitoring:
+### Quick Test (No Profiling)
+
+Faster execution without system performance monitoring:
 ```bash
-python run_and_monitor_db_test.py --env target -c 20 -o 100 -d 120
+python run_and_monitor_db_test.py --env target --no-profiling
 ```
 
-Test specific operations:
+### Skip Database Seeding
+
+Reuse existing data (saves ~10-15 seconds):
 ```bash
-python run_and_monitor_db_test.py --env source -c 5 -o 100 -t Owners
-python run_and_monitor_db_test.py --env source -c 5 -o 100 -t Pets
-python run_and_monitor_db_test.py --env source -c 5 -o 100 -t Visits
-python run_and_monitor_db_test.py --env source -c 5 -o 100 -t Read
-python run_and_monitor_db_test.py --env source -c 5 -o 100 -t Write
+python run_and_monitor_db_test.py --env target --no-seed
 ```
 
-### JMeter Testing
+### Database Cleanup Only
 
-Standard JMeter test with profiling:
-```bash
-python run_and_monitor_db_test.py --tool jmeter --env target
-```
-
-JMeter test without system profiling (faster):
-```bash
-python run_and_monitor_db_test.py --tool jmeter --env target --no-profiling
-```
-
-Skip database seeding (reuse existing data):
-```bash
-python run_and_monitor_db_test.py --tool jmeter --env target --no-seed
-```
-
-### Database Maintenance
-
-Cleanup database only:
+Clean all tables and exit (no test execution):
 ```bash
 python run_and_monitor_db_test.py --env target --cleanup
 ```
 
+### Custom Timeout
+
+Extend JMeter test timeout (default: 1800 seconds):
+```bash
+python run_and_monitor_db_test.py --env target --timeout 3600
+```
+
 ## Command-Line Options
 
-### Common Options
 | Option | Description | Default |
 |--------|-------------|---------|
-| `--env, --environment` | Database environment (source/target/local) | None |
-| `--config` | Path to db_config.json | ../db_config.json |
+| `--env` | Database environment (source/target/local) | target |
+| `--config` | Path to db_config.json | ../../db_config.json |
 | `--cleanup` | Clean database and exit | False |
-| `--tool` | Testing tool (python/jmeter) | python |
 | `--no-seed` | Skip database seeding | False |
-
-### Python Testing Options
-| Option | Description | Default |
-|--------|-------------|---------|
-| `-c, --connections` | Concurrent connections | 20 |
-| `-o, --operations` | Operations per connection | 100 |
-| `-t, --test-type` | Test type (Mixed/Books/Customers/Read/Write/etc.) | Mixed |
-| `-d, --duration` | Monitoring duration (seconds) | 120 |
-
-### JMeter Testing Options
-| Option | Description | Default |
-|--------|-------------|---------|
 | `--no-profiling` | Skip system performance monitoring | False |
+| `--timeout` | JMeter test timeout in seconds | 1800 |
 
 ## Test Operations
 
-### Python Testing
-- **Books**: SELECT, INSERT, UPDATE, DELETE on Books table
-- **Customers**: SELECT, INSERT, UPDATE, DELETE on Customers table  
-- **Rentals**: SELECT, UPDATE (return books)
-- **Stocks**: SELECT, UPDATE (availability)
-- **Mixed**: Weighted distribution (40% Books, 25% Customers, 20% Rentals, 15% Stocks)
+### JMeter Test Plan Structure
 
-### JMeter Testing (530 Operations)
-- **Books Thread Group** (200 ops): Full CRUD with JOIN queries
-- **Customers Thread Group** (150 ops): Full CRUD with LIKE searches
-- **Rentals Thread Group** (100 ops): Read and update operations
-- **Stocks Thread Group** (80 ops): Read and update availability
+The test runs **4 parallel thread groups** for 60 seconds each with 2-second delays between operations:
+
+#### 1. Owners Operations - CRUD (30%)
+- **Thread Count**: 1 user, 60-second duration
+- **Operations** (randomized):
+  - SELECT all owners (LIMIT 50)
+  - SELECT by random ID
+  - COUNT owners
+  - INSERT new owner (random data)
+  - UPDATE existing owner (address, telephone)
+  - INSERT then DELETE (transaction test)
+
+#### 2. Pets Operations - CRUD (30%)
+- **Thread Count**: 1 user, 60-second duration
+- **Operations** (randomized):
+  - SELECT all pets (LIMIT 50)
+  - SELECT by random ID
+  - SELECT with JOIN (pets + owners)
+  - COUNT pets
+  - INSERT new pet (random owner, type)
+  - UPDATE existing pet (name, birth_date)
+  - INSERT then DELETE (transaction test)
+
+#### 3. Visits Operations - CRUD (25%)
+- **Thread Count**: 1 user, 60-second duration
+- **Operations** (randomized):
+  - SELECT all visits (LIMIT 100)
+  - SELECT by pet ID
+  - SELECT with JOIN (visits + pets + owners)
+  - COUNT visits
+  - INSERT new visit
+  - UPDATE visit description
+  - INSERT then DELETE (transaction test)
+
+#### 4. Vets Operations - Read Only (10%)
+- **Thread Count**: 1 user, 60-second duration
+- **Operations** (randomized):
+  - SELECT all vets (LIMIT 50)
+  - SELECT by random ID
+  - SELECT with specialties JOIN
+  - COUNT vets
+  - SELECT vets with specific specialty
+
+### Database Connection Configuration
+- **JDBC Driver**: org.postgresql.Driver
+- **Connection Pool**: Max 50 connections
+- **Auto-commit**: Enabled
+- **Keep-alive**: Enabled
+- **Connection Age**: 5000ms
+- **Timeout**: 10 seconds
+- **SSL**: Required (sslmode=require)
 
 ## Output Files
 
-### Python Testing
-```
-database_test_results/
-├── load_test_YYYYMMDD_HHMMSS.csv     # Detailed operation results
-├── metrics_YYYYMMDD_HHMMSS.csv       # Database metrics
-└── summary_YYYYMMDD_HHMMSS.txt       # Test summary
-```
+All outputs are saved to `jmeter_results/` directory:
 
-### JMeter Testing
 ```
 jmeter_results/
-├── results_YYYYMMDD_HHMMSS.jtl              # Raw JMeter results
-├── report_YYYYMMDD_HHMMSS/                  # HTML report (open index.html)
-├── jmeter_YYYYMMDD_HHMMSS.log              # JMeter execution log
-├── performance_YYYYMMDD_HHMMSS.csv         # System metrics (raw)
-├── performance_YYYYMMDD_HHMMSS.clean.csv   # Cleaned metrics
-└── performance_graphs_YYYYMMDD_HHMMSS.png  # Performance visualizations
+├── results_YYYYMMDD_HHMMSS.jtl              # Raw JMeter test results (CSV format)
+├── report_YYYYMMDD_HHMMSS/                  # HTML dashboard (open index.html in browser)
+│   ├── index.html                           # Main dashboard with graphs
+│   ├── content/                             # Detailed statistics pages
+│   └── sbadmin2-1.0.7/                     # Report theme assets
+├── jmeter_YYYYMMDD_HHMMSS.log              # JMeter execution log with summary
+├── performance_YYYYMMDD_HHMMSS.csv         # Raw system metrics (Windows typeperf format)
+├── performance_YYYYMMDD_HHMMSS.clean.csv   # Cleaned/processed metrics (UTF-8)
+└── performance_graphs_YYYYMMDD_HHMMSS.png  # System performance visualization (2×2 grid)
 ```
 
 ## Performance Graphs
@@ -188,111 +208,188 @@ When profiling is enabled (JMeter on Windows), the script generates a 2×2 grid 
 
 ## Test Database Schema
 
-The script automatically seeds the following test data:
-- **20 Authors**: Fiction, Mystery, Sci-Fi, Romance, Horror writers
-- **20 Books**: 2 books per author with titles, prices, ratings
-- **20 Customers**: Test customers with email, phone, addresses
-- **30 Stocks**: 3 copies per book (first 10 books)
-- **1 Genre**: Fiction (persistent)
+The script automatically seeds the following test data (8,056 total records):
 
-## Monitoring Metrics
+| Table | Records | Description |
+|-------|---------|-------------|
+| **types** | 6 | Pet types: cat, dog, lizard, snake, bird, hamster |
+| **specialties** | 6 | Vet specialties: radiology, surgery, dentistry, cardiology, dermatology, neurology |
+| **owners** | 1,000 | Pet owners with first/last name, address, city, telephone |
+| **pets** | 2,000 | Pets linked to owners (name, birth_date, type_id, owner_id) |
+| **vets** | 50 | Veterinarians with first/last name |
+| **vet_specialties** | ~100 | Many-to-many: vets linked to 1-3 specialties each |
+| **visits** | 5,000 | Pet visits with date and description |
 
-### Python Testing
-- **Database Metrics** (via DMVs):
-  - CPU usage (processor time)
-  - Memory usage (MB)
-  - Active connections
-  - Batch requests/sec
-  - Transactions/sec
+### Data Generation Details
+- **Names**: 24 first names, 16 last names (random combinations)
+- **Addresses**: 12 street names, 10 Wisconsin cities
+- **Pets**: 16 pet names, birth dates 2010-2023
+- **Visits**: 10 description types (checkup, vaccination, surgery, etc.), dates 2020-2024
+- **Batched Inserts**: 100-200 records per batch for performance
 
-### JMeter Testing (Windows only)
-- **System Metrics** (via typeperf):
-  - CPU: Processor Time %
-  - Memory: Available MB, Committed %
-  - Disk: Reads/sec, Writes/sec
-  - Network: Bytes Total/sec (all interfaces)
+## System Performance Monitoring
+
+When profiling is enabled (Windows only), the script monitors system metrics using `typeperf`:
+
+### Metrics Collected (1-second intervals)
+- **CPU**: `\Processor(_Total)\% Processor Time`
+- **Memory**: 
+  - `\Memory\Available MBytes`
+  - `\Memory\% Committed Bytes In Use`
+- **Disk I/O**: 
+  - `\PhysicalDisk(_Total)\Disk Reads/sec`
+  - `\PhysicalDisk(_Total)\Disk Writes/sec`
+- **Network**: `\Network Interface(*)\Bytes Total/sec` (all adapters)
+
+### Performance Graph Layout
+
+Auto-generated 2×2 grid with 4 subplots:
+1. **Top-Left**: CPU Usage (%) with average line
+2. **Top-Right**: Memory Usage (%) with average line  
+3. **Bottom-Left**: Disk I/O (Reads/Writes per second)
+4. **Bottom-Right**: Network Activity (MB/s total)
 
 ## Troubleshooting
 
 ### JMeter Not Found
 ```
 Error: JMeter not found in PATH
-Solution: Add JMeter bin directory to PATH
+Solution: Install JMeter and add bin directory to PATH
+  Windows: $env:PATH += ';C:\Tools\apache-jmeter-5.6.3\bin'
+  See JMETER_SETUP.md for full instructions
 ```
 
 ### JDBC Connection Failed
 ```
 Error: Cannot create PoolableConnectionFactory
-Solution: Check JDBC driver in JMeter lib/ folder
+Solution: 
+  1. Verify PostgreSQL JDBC driver is in JMeter lib/ folder
+  2. Check database connection parameters in db_config.json
+  3. Ensure database is accessible and credentials are correct
+  4. Restart JMeter after adding JDBC driver
 ```
 
-### Performance Monitoring Shows N/A
+### Python Package Missing
 ```
-Cause: Requires VIEW SERVER STATE permission
-Solution: This is expected; metrics are for system-level monitoring
+Error: ModuleNotFoundError: No module named 'psycopg2'
+Solution: Install required packages
+  pip install psycopg2-binary pandas matplotlib
 ```
 
 ### Graph Generation Failed
 ```
 Error: Graphing libraries not available
-Solution: pip install pandas matplotlib
+Solution: Install matplotlib and pandas
+  pip install pandas matplotlib
 ```
 
-## Examples
+### Performance Monitoring Not Working
+```
+Cause: Not running on Windows or typeperf not available
+Solution: Use --no-profiling flag or run on Windows with typeperf
+  python run_and_monitor_db_test.py --env target --no-profiling
+```
 
-### Full Test Suite
+## Workflow Examples
+
+### Complete Test Run (Recommended)
 ```bash
-# 1. Cleanup previous test data
+# Full test with cleanup, seeding, profiling
+python run_and_monitor_db_test.py --env target
+```
+**Execution steps:**
+1. Check JMeter prerequisites
+2. Cleanup database (delete all records)
+3. Seed test data (8,056 records)
+4. Start performance monitoring (typeperf)
+5. Run JMeter test (60 seconds, 4 thread groups)
+6. Stop monitoring
+7. Process performance data and generate graphs
+8. Display results summary
+
+### Quick Test (Skip Profiling)
+```bash
+# Faster execution without system metrics
+python run_and_monitor_db_test.py --env target --no-profiling
+```
+
+### Reuse Existing Data
+```bash
+# Skip cleanup and seeding (saves ~15 seconds)
+python run_and_monitor_db_test.py --env target --no-seed --no-profiling
+```
+
+### Database Maintenance
+```bash
+# Cleanup before/after testing
 python run_and_monitor_db_test.py --env target --cleanup
-
-# 2. Run Python load test
-python run_and_monitor_db_test.py --env target -c 10 -o 50
-
-# 3. Run JMeter test with profiling
-python run_and_monitor_db_test.py --tool jmeter --env target
-
-# 4. Compare results from both tests
 ```
 
-### Performance Testing Workflow
+### Test Different Environments
 ```bash
-# Light load (baseline)
-python run_and_monitor_db_test.py --env target -c 5 -o 20
+# Source environment
+python run_and_monitor_db_test.py --env source
 
-# Medium load
-python run_and_monitor_db_test.py --env target -c 10 -o 50
+# Local environment
+python run_and_monitor_db_test.py --env local
 
-# Heavy load (stress test)
-python run_and_monitor_db_test.py --env target -c 50 -o 200
+# Target environment (default)
+python run_and_monitor_db_test.py --env target
 ```
 
-### JMeter Quick Test (No Profiling)
-```bash
-# Fast execution without system monitoring
-python run_and_monitor_db_test.py --tool jmeter --env target --no-profiling
-```
+## Test Execution Flow
 
-## Comparison: Python vs JMeter
+The test runner follows a 7-step process:
 
-| Aspect | Python Testing | JMeter Testing |
-|--------|---------------|----------------|
-| **Protocol** | pyodbc (native) | JDBC |
-| **Concurrency** | Configurable | Fixed (530 ops, 10 threads/group) |
-| **Operations** | Flexible | Predefined test plan |
-| **Database Metrics** | Yes (DMVs) | No |
-| **System Metrics** | No | Yes (Windows typeperf) |
-| **HTML Reports** | No | Yes |
-| **Real-time Feedback** | Yes | Log parsing |
-| **Use Case** | Flexible load testing | Industry-standard benchmarking |
+### Step 1: Check Prerequisites
+- Verify JMeter is installed and in PATH
+- Display JMeter version
+- Validate PostgreSQL JDBC driver
+
+### Step 2: Clean Database
+- Delete records from all tables in correct order:
+  1. visits
+  2. vet_specialties  
+  3. pets
+  4. owners
+  5. vets
+  6. specialties
+  7. types
+
+### Step 3: Seed Database (unless --no-seed)
+- Insert test data in correct order (respecting foreign keys)
+- Use batched inserts for performance
+- Display progress for large tables
+
+### Step 4: Start Performance Monitoring (unless --no-profiling)
+- Launch Windows typeperf in background
+- Monitor CPU, Memory, Disk, Network at 1-second intervals
+- Save to timestamped CSV file
+
+### Step 5: Run JMeter Test
+- Execute test plan with environment-specific DB parameters
+- Generate JTL results file
+- Create HTML dashboard report
+- Write execution log with summary
+
+### Step 6: Stop Performance Monitoring
+- Gracefully terminate typeperf process
+- Wait for final metrics to be written
+
+### Step 7: Process and Consolidate Results
+- Clean CSV (convert UTF-16 to UTF-8, remove PDH headers)
+- Generate performance graphs (2×2 grid)
+- Display summary of all output files
 
 ## Best Practices
 
-1. **Always cleanup before major tests**: `--cleanup` ensures clean baseline
-2. **Start with small loads**: Test with `-c 5 -o 20` before scaling up
-3. **Monitor system resources**: Use `--tool jmeter` with profiling for system-level analysis
-4. **Save HTML reports**: JMeter reports provide detailed analysis and can be archived
-5. **Compare both tools**: Run both Python and JMeter tests for comprehensive coverage
-6. **Use appropriate test types**: Match test type to workload (Books for read-heavy, etc.)
+1. **Always cleanup before major tests**: Use `--cleanup` to ensure clean baseline data
+2. **Use profiling for analysis**: Enable system monitoring (default) to understand resource usage
+3. **Archive HTML reports**: Save JMeter HTML reports for historical comparison
+4. **Test different environments**: Run against source, target, and local to compare
+5. **Check graph trends**: Review performance graphs for bottlenecks (CPU spikes, memory leaks)
+6. **Monitor JMeter log**: Check log file for connection errors or timeouts
+7. **Adjust timeout if needed**: Use `--timeout` for longer test durations or slow networks
 
 ## Support
 
@@ -302,4 +399,4 @@ For test case documentation, see [test_cases.md](test_cases.md)
 
 ## License
 
-Internal testing tool for BookStore database performance validation.
+Internal testing tool for PetClinic PostgreSQL database performance validation.
